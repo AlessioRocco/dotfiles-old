@@ -1,0 +1,3 @@
+#compdef nrm
+
+compadd `ls ~/notes`

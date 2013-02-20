@@ -1,0 +1,26 @@
+# vim: filetype=muttrc
+# A basic .muttrc for use with Gmail
+
+set hostname = gmail.com
+set imap_check_subscribed
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Bozze"
+
+# This is using the 'trash' patch.
+set trash= +[Gmail]/Cestino
+
+# Gmail style keybindings
+macro index,pager e  "<save-message>=[Gmail]/Tutti i messaggi<enter><enter>" "Archive conversation"
+macro index,pager +  <save-message>=[Gmail]/Importanti<enter><enter> "Mark as important"
+macro index,pager !  <save-message>=[Gmail]/Spam<enter><enter> "Report spam"
+macro index,pager ga "<change-folder>=[Gmail]/Tutti i messaggi<enter>"  "Go to all mail"
+macro index,pager gs <change-folder>=[Gmail]/Speciali<enter> "Go to 'Starred'"
+macro index,pager gd <change-folder>=[Gmail]/Bozze<enter>  "Go to 'Drafts'"
+macro index,pager gl <change-folder>?       "Go to 'Label'"
+macro index,pager gi <change-folder>=INBOX<enter>     "Go to inbox"
+macro index,pager gt "<change-folder>=[Gmail]/Posta inviata<enter>" "Go to 'Sent Mail'"
+folder-hook +INBOX 'macro index,pager y "<save-message>=[Gmail]/Tutti i messaggi<enter><enter>" "Archive conversation"'
+folder-hook +[Gmail]/Cestino macro index,pager y <save-message>=INBOX<enter><enter> "Move to inbox"
+folder-hook +[Gmail]/Speciali bind  index,pager y flag-message #"Toggle star"

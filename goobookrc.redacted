@@ -1,0 +1,6 @@
+[DEFAULT]
+email: alessio.rocco.lt@gmail.com
+password: # briefcase(password_goobookrc)
+max_results: 9999
+cache_filename: ~/.goobook_cache
+cache_expiry_hours: 24

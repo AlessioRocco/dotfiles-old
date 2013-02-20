@@ -1,0 +1,8 @@
+[gcalcli]
+user: alessio.rocco.lt@gmail.con
+pw: # briefcase(password_gcalcli)
+# The following lines are optional
+24hr: true
+details: true
+ignore-started: true
+mon: true

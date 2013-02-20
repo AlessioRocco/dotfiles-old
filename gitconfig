@@ -1,0 +1,25 @@
+[user]
+  name = Alessio Rocco
+  email = alessio.rocco.lt@gmail.com
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
+[push]
+  default = tracking
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+[alias]
+  i = init
+  c = commit -m
+  a = add
+  pl = pull
+  ps = push
+  st = status
+  ci = commit
+  co = checkout
+[github]
+	user = AlessioRocco

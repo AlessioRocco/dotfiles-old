@@ -1,0 +1,36 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+.spin
+
+# Textmate project file
+*.tmproj
+
+# swap file
+.*.swp
+
+# Vim
+.netrwhist
+
+# CTags
+.tags
+.tags_sorted_by_file
+tags
+tags_sorted_by_file
+
+# Sublime Text 2
+*.sublime*
+*.cache
+
+# rbenv
+.rbenv-version
+
+# pow
+.powrc
+.powenv
+
+# simplecov
+coverage/

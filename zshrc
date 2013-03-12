@@ -68,5 +68,14 @@ export MYVIMRC="$HOME/.vimrc"
 . ~/.nvm/nvm.sh
 
 # Add rbenv
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 eval "$(rbenv init -)"
+
+# Use zsh like vim
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select

@@ -9,7 +9,8 @@ source ~/.mutt/alessio.rocco.lt.gmail.com.muttrc
 
 # Change mail
 macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/alessio.rocco.lt.gmail.com.muttrc<enter><change-folder>!<enter>'
-macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/alessio.alittleb.it.muttrc<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/alessio.rocco.blankstudio.it.muttrc<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/alessio.alittleb.it.muttrc<enter><change-folder>!<enter>'
 
 # Solarized
 source ~/.mutt/mutt-colors-solarized-dark-256.muttrc
@@ -27,7 +28,7 @@ set signature        = ~/.mutt/sig           # my signature file
 set wait_key = no        # shut up, mutt
 set timeout = 300        # idle time before scanning
 set mail_check = 60      # minimum time between scans
-set imap_keepalive = 900 # Reduce this number if you find yourself getting disconnected from your IMAP server due to inactivity.
+set imap_keepalive = 500 # Reduce this number if you find yourself getting disconnected from your IMAP server due to inactivity.
 unset move               # gmail does that
 set delete               # don't ask, just do
 unset confirmappend      # don't ask, just do!
@@ -38,12 +39,7 @@ set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 set include              # Controls whether or not a copy of the message(s) you are replying to is included in your reply.
 set auto_tag = yes       # Functions in the index menu which affect a message will be applied to all tagged messages (if there are any)
-
-# Sidebar Patch --------------------------------------
-set sidebar_delim   = '  │'
-set sidebar_visible = yes
-set sidebar_width   = 30
-color sidebar_new color221 color233
+set copy=no              # Don't save sent messages
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -82,11 +78,6 @@ bind index G        last-entry
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
 
-# Sidebar Navigation ---------------------------------
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
-
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
 set pager_context = 3      # number of context lines to show
@@ -96,7 +87,8 @@ set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 #
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/plain text/enriched text/html
+alternative_order text/plain text/html text/enriched
+auto_view text/html
 
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
@@ -112,7 +104,7 @@ bind attach <return> view-mailcap
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
 # Compose View Options -------------------------------
-set realname = "Steve Losh"          # who am i?
+set realname = "Alessio Rocco"          # who am i?
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
 set edit_headers                     # show headers when composing
@@ -131,4 +123,4 @@ set forward_quote                    # include message in forwards
 # mail address completion
 set query_command="goobook query '%s'"
 bind editor <Tab> complete-query
-macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
+macro index,pager ba "<pipe-message>goobook add<return>" "add the sender address to Google contacts"

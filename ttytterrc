@@ -10,3 +10,5 @@ readline=1
 mentions=1
 
 timestamp=%a, %H:%M
+
+urlopen=open %U

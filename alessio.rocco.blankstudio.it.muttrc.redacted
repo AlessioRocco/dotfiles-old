@@ -1,0 +1,14 @@
+# vim: filetype=muttrc
+
+# A basic .muttrc for use with Gmail
+# # Change the following six lines to match your Gmail account details
+
+set imap_user = "alessio.rocco@blankstudio.it"
+set imap_pass = # briefcase(password_blankstudio)
+set smtp_url = "smtp://alessio.rocco@blankstudio.it@smtp.gmail.com:587/"
+set smtp_pass = # briefcase(password_blankstudio)
+set from = "Alessio Rocco <alessio.rocco@blankstudio.it>"
+set realname = "Alessio Rocco"
+
+# Generic gmail config
+source ~/.mutt/gmail.muttrc

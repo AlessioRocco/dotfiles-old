@@ -103,7 +103,7 @@ set visualbell                    " no beeping
 set backspace=indent,eol,start    " allow backspacing over everything in insert mode
 set autoindent                    " always set autoindenting on
 let mapleader=","                 " change mapleader key
-set foldmethod=syntax
+set foldmethod=manual
 set pastetoggle=<F9>
 set mouse=a
 

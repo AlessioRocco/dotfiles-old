@@ -67,9 +67,10 @@ export MYVIMRC="$HOME/.vimrc"
 # activate nvm
 . ~/.nvm/nvm.sh
 
-# Add rbenv
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-eval "$(rbenv init -)"
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+chruby ruby-1.9.3
 
 # Use zsh like vim
 function zle-line-init zle-keymap-select {

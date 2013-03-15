@@ -40,6 +40,7 @@ set thorough_search      # strip headers and eval mimes before searching
 set include              # Controls whether or not a copy of the message(s) you are replying to is included in your reply.
 set auto_tag = yes       # Functions in the index menu which affect a message will be applied to all tagged messages (if there are any)
 set copy=no              # Don't save sent messages
+set sleep_time=0         # http://scie.nti.st/2007/11/9/speed-up-changing-folders-in-mutt/ 
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"

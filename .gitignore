@@ -6,3 +6,5 @@ mutt/cache
 mutt/tmp
 goobookrc
 alessio.rocco.blankstudio.it.muttrc
+newsbeuter/cache.db
+newsbeuter/cache.db.lock

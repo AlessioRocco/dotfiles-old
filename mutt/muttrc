@@ -88,8 +88,8 @@ set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 #
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/plain text/html text/enriched
 auto_view text/html
+alternative_order text/html text/plain text/enriched
 
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line

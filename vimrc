@@ -62,6 +62,15 @@ Bundle 'godlygeek/tabular'
 " Graph your Vim undo tree in style
 Bundle 'sjl/gundo.vim'
 
+" Easymotion
+Bundle 'Lokaltog/vim-easymotion'
+
+" Vimux
+Bundle 'benmills/vimux'
+
+" Vroom
+Bundle 'skalnik/vim-vroom'
+
 " Syntaxes
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
@@ -106,6 +115,15 @@ let mapleader=","                 " change mapleader key
 set foldmethod=manual
 set pastetoggle=<F9>
 set mouse=a
+
+" Line width
+" http://blog.ezyang.com/2010/03/vim-textwidth/
+:set tw=72
+:set fo+=t
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%74v.*/
+augroup END
 
 " Command line
 set history=50                    " keep 50 lines of command line history
@@ -153,15 +171,15 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 " Tagbar
 let g:tabgbar_ctags_bin="/usr/local/bin/ctags"
 let g:tagbar_type_ruby = {
-  \ 'kinds' : [
-    \ 'm:modules',
-    \ 'c:classes',
-    \ 'd:describes',
-    \ 'C:contexts',
-    \ 'f:methods',
-    \ 'F:singleton methods'
-  \ ]
-\ }
+      \ 'kinds' : [
+      \ 'm:modules',
+      \ 'c:classes',
+      \ 'd:describes',
+      \ 'C:contexts',
+      \ 'f:methods',
+      \ 'F:singleton methods'
+      \ ]
+      \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
@@ -171,7 +189,7 @@ nmap <F3> :TagbarToggle<CR>
 nnoremap <F4> :GundoToggle<CR>
 
 " Ack
-map <leader>f :Ack 
+map <leader>/ :Ack 
 
 " Write and quit on the fly
 map <leader>w :write<CR>
@@ -207,17 +225,20 @@ map <leader>bb :BuffergatorOpen<CR>
 map <leader>bt :BuffergatorTabsOpen<CR>
 
 " Rails stuff
-map <leader>ra :A<CR>
-map <leader>rr :R<CR>
-map <leader>rm :Rmodel<CR>
-map <leader>rc :Rcontroller<CR>
-map <leader>rv :Rview<CR>
-map <leader>rs :Rscript 
-vmap <leader>re :Rextract
+map ga :A<CR>
+map gr :R<CR>
+"map <leader>rm :Rmodel<CR>
+"map <leader>rc :Rcontroller<CR>
+"map <leader>rv :Rview<CR>
+"map <leader>rs :Rscript 
+"vmap <leader>re :Rextract
 
 " Run Test
-map <leader>T :call RunCurrentTest()<CR>
-map <leader>t :call RunCurrentLineInTest()<CR>
+" map <leader>T :call RunCurrentTest()<CR>
+" map <leader>t :call RunCurrentLineInTest()<CR>
+let g:vroom_use_vimux = 1
+let g:vroom_test_unit_command = "test"
+let g:VimuxOrientation = "v"
 
 " CTags
 set tags=./.tags,.tags
@@ -233,89 +254,42 @@ imap ` <Esc>
 
 " Tab
 imap <tab> <C-n>
+
+" Indent file
+map <f7> gg=G
+
+" Copy to system clipboard
+map <leader>y "*y
+
+" Paste from system clipboard
+map <leader>p "*p
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custum scripts
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Test-running stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RunCurrentTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFile()
-
-    if match(expand('%'), '\.feature$') != -1
-      call SetTestRunner("!cucumber")
-      exec g:bjo_test_runner g:bjo_test_file
-    elseif match(expand('%'), '_spec\.rb$') != -1
-      if filereadable(getcwd()."/.spin") 
-        call SetTestRunner("silent !spin push")
-        exec g:bjo_test_runner g:bjo_test_file
-        exec 'redraw!'
-      else
-        call SetTestRunner("!rspec")
-        exec g:bjo_test_runner g:bjo_test_file
-      end
-    else
-      call SetTestRunner("!ruby -Itest")
-      exec g:bjo_test_runner g:bjo_test_file
-    endif
-  else
-    exec g:bjo_test_runner g:bjo_test_file
-  endif
-endfunction
-
-function! SetTestRunner(runner)
-  let g:bjo_test_runner=a:runner
-endfunction
-
-function! RunCurrentLineInTest()
-  let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|_test.rb\)$') != -1
-  if in_test_file
-    call SetTestFileWithLine()
-  end
-
-  if filereadable(getcwd()."/.spin")
-    exec "silent !spin push" g:bjo_test_file . ":" . g:bjo_test_file_line 
-    exec 'redraw!'
-  else
-    exec "!rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
-  end
-endfunction
-
-function! SetTestFile()
-  let g:bjo_test_file=@%
-endfunction
-
-function! SetTestFileWithLine()
-  let g:bjo_test_file=@%
-  let g:bjo_test_file_line=line(".")
-endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Conditionally autocreating non-existent directories
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup AutoMkdir
-    autocmd!
-    autocmd  BufNewFile  *  :call EnsureDirExists()
+  autocmd!
+  autocmd  BufNewFile  *  :call EnsureDirExists()
 augroup END
 function! EnsureDirExists ()
-    let required_dir = expand("%:h")
-    if !isdirectory(required_dir)
-        call AskQuit("Directory '" . required_dir . "' doesn't exist.", "&Create it?")
+  let required_dir = expand("%:h")
+  if !isdirectory(required_dir)
+    call AskQuit("Directory '" . required_dir . "' doesn't exist.", "&Create it?")
 
-        try
-            call mkdir( required_dir, 'p' )
-        catch
-            call AskQuit("Can't create '" . required_dir . "'", "&Continue anyway?")
-        endtry
-    endif
+    try
+      call mkdir( required_dir, 'p' )
+    catch
+      call AskQuit("Can't create '" . required_dir . "'", "&Continue anyway?")
+    endtry
+  endif
 endfunction
 
 function! AskQuit (msg, proposed_action)
-    if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 1
-        exit
-    endif
+  if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 1
+    exit
+  endif
 endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

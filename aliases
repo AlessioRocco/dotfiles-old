@@ -13,7 +13,7 @@ alias bi="bundle install"
 alias bu="bundle update"
 
 # git
-alias g="git"
+alias g="hub"
 
 # Tests and Specs
 alias t="ruby -I test"

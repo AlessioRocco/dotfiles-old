@@ -16,10 +16,17 @@
   i = init
   c = commit -m
   a = add
+  s = status
+  d = diff --color-words
   pl = pull
   ps = push
-  st = status
   ci = commit
   co = checkout
+  br = branch
+  lg = "!source ~/.githelpers && pretty_git_log"
+  l = !git lg -30
+  la = !git lg --all
+  ll = log --stat --abbrev-commit
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [github]
 	user = AlessioRocco

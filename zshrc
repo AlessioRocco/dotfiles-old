@@ -1,7 +1,7 @@
 # Projects path and project function
 PROJECTS_PATH="$HOME/projects"
 change_project(){
- cd $PROJECTS_PATH/$1
+  cd $PROJECTS_PATH/$1
 }
 
 open_project(){
@@ -64,8 +64,15 @@ export PS1='[${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[red]%}%~%{$
 # vimrc
 export MYVIMRC="$HOME/.vimrc"
 
+# Bacward search in the shell history with <C-r>
+bindkey ^r  history-incremental-search-backward
+setopt hist_ignore_all_dups
+
 # activate nvm
 . ~/.nvm/nvm.sh
+
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
@@ -74,9 +81,9 @@ chruby ruby-1.9.3
 
 # Use zsh like vim
 function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
+  RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+  RPS2=$RPS1
+  zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select

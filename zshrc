@@ -71,11 +71,6 @@ setopt hist_ignore_all_dups
 # 10ms for key sequences
 KEYTIMEOUT=1
 
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-1.9.3
-
 # Use zsh like vim
 function zle-line-init zle-keymap-select {
   RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"

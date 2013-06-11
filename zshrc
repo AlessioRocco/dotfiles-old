@@ -68,9 +68,6 @@ export MYVIMRC="$HOME/.vimrc"
 bindkey ^r  history-incremental-search-backward
 setopt hist_ignore_all_dups
 
-# activate nvm
-. ~/.nvm/nvm.sh
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 

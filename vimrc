@@ -31,9 +31,6 @@ Bundle 'mileszs/ack.vim'
 " Vim plugin that displays tags in a window, ordered by class etc.
 Bundle 'majutsushi/tagbar'
 
-" Vim plugin to list, select and switch between buffers.
-Bundle 'jeetsukumaran/vim-buffergator'
-
 " unimpaired.vim: pairs of handy bracket mappings
 Bundle 'tpope/vim-unimpaired'
 
@@ -68,8 +65,14 @@ Bundle 'Lokaltog/vim-easymotion'
 " Vimux
 Bundle 'benmills/vimux'
 
+" Vim Ruby Debugger
+" Bundle 'astashov/vim-ruby-debugger'
+
 " Vroom
 Bundle 'skalnik/vim-vroom'
+
+" Numbertoggle
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -84,7 +87,7 @@ Bundle 'vim-ruby/vim-ruby'
 " Snipmate 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
+Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
 
 " Themes
@@ -112,21 +115,32 @@ set visualbell                    " no beeping
 set backspace=indent,eol,start    " allow backspacing over everything in insert mode
 set autoindent                    " always set autoindenting on
 let mapleader=","                 " change mapleader key
+set complete=.,w,b,u,i
 set foldmethod=manual
 set pastetoggle=<F9>
 set mouse=a
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+set timeoutlen=1000 ttimeoutlen=0
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " Line width
 " http://blog.ezyang.com/2010/03/vim-textwidth/
-:set tw=72
-:set fo+=t
+set tw=78
+set fo+=t
 augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%74v.*/
+  autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
+  autocmd BufEnter * match OverLength /\%78v.*/
 augroup END
 
 " Command line
-set history=50                    " keep 50 lines of command line history
+set history=1000                    " keep 1000 lines of command line history
 set wildmenu                      " Enhanced command line completion.
 
 " Use space instead of tabs
@@ -143,7 +157,7 @@ set smartcase                     " ... unless they contain at least one capital
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**
+set wildignore+=*.o,*.obj,.git,*.rbc,*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**,*/tmp/*,*.so,*.swp,*.zip
 
 " Status bar
 set laststatus=2
@@ -160,10 +174,8 @@ set noswapfile                    " http://robots.thoughtbot.com/post/1873940257
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline
 let g:Powerline_symbols = 'fancy'
-let g:buffergator_viewport_split_policy = 'B'
-let g:buffergator_split_size = 20
-let g:buffergator_suppress_keymaps = 1
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']
@@ -181,6 +193,14 @@ let g:tagbar_type_ruby = {
       \ ]
       \ }
 
+" Ruby Debugger
+" let g:ruby_debugger_progname = 'mvim'
+
+"CtrlP
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Easy-motion
+let g:EasyMotion_leader_key = '<Space>'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -194,7 +214,9 @@ map <leader>/ :Ack
 " Write and quit on the fly
 map <leader>w :write<CR>
 map <leader>q :quit<CR>
-map <leader>Q :quitall<CR>
+map <leader>qq :quit<CR>
+map <leader>qb :bd<CR>
+map <leader>qa :quitall<CR>
 
 " Modify vimrc on the fly
 nmap <leader>v :tabedit $MYVIMRC<CR>
@@ -219,26 +241,19 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gc :Gcommit<CR>
 
-" Buffergator
-map <leader>b :BuffergatorOpen<CR>
-map <leader>bb :BuffergatorOpen<CR>
-map <leader>bt :BuffergatorTabsOpen<CR>
-
 " Rails stuff
 map ga :A<CR>
 map gr :R<CR>
-"map <leader>rm :Rmodel<CR>
-"map <leader>rc :Rcontroller<CR>
-"map <leader>rv :Rview<CR>
-"map <leader>rs :Rscript 
-"vmap <leader>re :Rextract
+" vmap <leader>e :Rextract
 
 " Run Test
-" map <leader>T :call RunCurrentTest()<CR>
-" map <leader>t :call RunCurrentLineInTest()<CR>
 let g:vroom_use_vimux = 1
 let g:vroom_test_unit_command = "test"
-let g:VimuxOrientation = "v"
+let g:VimuxOrientation = "h"
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<s-tab>"
 
 " CTags
 set tags=./.tags,.tags
@@ -249,12 +264,6 @@ map <f6> :!bundle list --paths=true \| xargs /usr/local/bin/ctags -f .tags *<CR>
 map <leader>\| :vsplit<CR>
 map <leader>- :split<CR>
 
-" Escape
-imap ` <Esc>
-
-" Tab
-imap <tab> <C-n>
-
 " Indent file
 map <f7> gg=G
 
@@ -263,6 +272,13 @@ map <leader>y "*y
 
 " Paste from system clipboard
 map <leader>p "*p
+
+"ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custum scripts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

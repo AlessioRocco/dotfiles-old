@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-if [[ $1 == "MSG" && $2 == "IN" ]]; then
-  growlnotify --image $HOME/.mcabber/mcabber.png "$3
-  New Message"
-fi

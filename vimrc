@@ -23,7 +23,7 @@ Bundle 'gmarik/vundle'
 " Utils
 
 " The ultimate vim statusline utility
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 
 " Vim plugin for the Perl module / CLI script 'ack'
 Bundle 'mileszs/ack.vim'
@@ -74,6 +74,12 @@ Bundle 'skalnik/vim-vroom'
 " Numbertoggle
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
+" Vitality
+Bundle 'sjl/vitality.vim'
+
+" Gitgutter
+Bundle 'airblade/vim-gitgutter'
+
 " Syntaxes
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
@@ -115,6 +121,7 @@ set visualbell                    " no beeping
 set backspace=indent,eol,start    " allow backspacing over everything in insert mode
 set autoindent                    " always set autoindenting on
 let mapleader=","                 " change mapleader key
+set noshowmode                    " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set complete=.,w,b,u,i
 set foldmethod=manual
 set pastetoggle=<F9>
@@ -122,22 +129,15 @@ set mouse=a
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 set timeoutlen=1000 ttimeoutlen=0
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
 
 " Line width
 " http://blog.ezyang.com/2010/03/vim-textwidth/
 set tw=78
 set fo+=t
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
-  autocmd BufEnter * match OverLength /\%78v.*/
-augroup END
+"augroup vimrc_autocmds
+  "autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
+  "autocmd BufEnter * match OverLength /\%78v.*/
+"augroup END
 
 " Command line
 set history=1000                    " keep 1000 lines of command line history
@@ -175,7 +175,7 @@ set noswapfile                    " http://robots.thoughtbot.com/post/1873940257
 " Plugin Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline
-let g:Powerline_symbols = 'fancy'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']

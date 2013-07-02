@@ -81,7 +81,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 # Powerline
-. '/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh'
+# . '/opt/boxen/homebrew/Cellar/python/2.7.3-boxen2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh'
 
 # Fix for vim in tmux
 export TERM="xterm-256color"

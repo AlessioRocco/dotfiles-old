@@ -60,7 +60,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim'
 
 " Easymotion
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'Lokaltog/vim-easymotion'
 
 " Vimux
 Bundle 'benmills/vimux'
@@ -72,13 +72,17 @@ Bundle 'benmills/vimux'
 Bundle 'skalnik/vim-vroom'
 
 " Numbertoggle
-Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+" Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Vitality
 Bundle 'sjl/vitality.vim'
 
 " Gitgutter
 Bundle 'airblade/vim-gitgutter'
+
+" Gist
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " Syntaxes
 Bundle 'tpope/vim-haml'
@@ -90,11 +94,17 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
 
+" Neocomplcache
+" Bundle 'Shougo/neocomplcache.vim'
+
+" Neosnippet
+" Bundle 'Shougo/neosnippet.vim'
+
 " Snipmate 
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle "garbas/vim-snipmate"
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "honza/vim-snippets"
+"Bundle "garbas/vim-snipmate"
 
 " Themes
 Bundle 'altercation/vim-colors-solarized'
@@ -126,14 +136,14 @@ set complete=.,w,b,u,i
 set foldmethod=manual
 set pastetoggle=<F9>
 set mouse=a
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
+" autocmd InsertEnter * set cul
+" autocmd InsertLeave * set nocul
 set timeoutlen=1000 ttimeoutlen=0
 
 " Line width
 " http://blog.ezyang.com/2010/03/vim-textwidth/
-set tw=78
-set fo+=t
+" set tw=78
+" set fo+=t
 "augroup vimrc_autocmds
   "autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
   "autocmd BufEnter * match OverLength /\%78v.*/
@@ -248,12 +258,7 @@ map gr :R<CR>
 
 " Run Test
 let g:vroom_use_vimux = 1
-let g:vroom_test_unit_command = "test"
 let g:VimuxOrientation = "h"
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<s-tab>"
 
 " CTags
 set tags=./.tags,.tags

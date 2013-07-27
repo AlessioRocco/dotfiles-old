@@ -2,7 +2,7 @@
   name = Alessio Rocco
   email = alessio.rocco.lt@gmail.com
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = /opt/boxen/config/git/gitignore
   editor = vim
 [push]
   default = tracking

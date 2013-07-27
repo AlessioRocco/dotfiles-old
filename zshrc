@@ -18,11 +18,6 @@ compinit
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
 
-# Fast way to add notes
-n() {  $EDITOR ~/notes/"$*".txt }
-nls() { tree -CR --noreport ~/notes }
-nrm() { rm -r ~/notes/"$*" }
-
 # automatically enter directories without cd
 setopt auto_cd
 

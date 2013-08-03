@@ -48,6 +48,3 @@ alias p=open_project
 
 # Reload Shell
 alias reload="exec $SHELL"
-
-# console
-alias console="p console"

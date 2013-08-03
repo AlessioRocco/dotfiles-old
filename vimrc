@@ -35,16 +35,16 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-unimpaired'
 
 " hax0r vim script to give you a tree explorer
-Bundle 'scrooloose/nerdtree'          
+Bundle 'scrooloose/nerdtree'
 
 " Vim plugin for intensely orgasmic commenting
 Bundle 'scrooloose/nerdcommenter'
 
 " surround.vim: quoting/parenthesizing made simple
-Bundle 'tpope/vim-surround'       
+Bundle 'tpope/vim-surround'
 
 " extended % matching for HTML, LaTeX, and many other languages
-Bundle 'tsaleh/vim-matchit'       
+Bundle 'tsaleh/vim-matchit'
 
 " Fuzzy file, buffer, mru, tag, etc finder.
 Bundle 'kien/ctrlp.vim'
@@ -59,9 +59,6 @@ Bundle 'godlygeek/tabular'
 " Graph your Vim undo tree in style
 Bundle 'sjl/gundo.vim'
 
-" Easymotion
-" Bundle 'Lokaltog/vim-easymotion'
-
 " Vimux
 Bundle 'benmills/vimux'
 
@@ -70,9 +67,6 @@ Bundle 'benmills/vimux'
 
 " Vroom
 Bundle 'skalnik/vim-vroom'
-
-" Numbertoggle
-" Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Vitality
 Bundle 'sjl/vitality.vim'
@@ -84,6 +78,9 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" Remove trailing whitespace
+Bundle 'rondale-sc/vim-spacejam'
+
 " Syntaxes
 Bundle 'tpope/vim-haml'
 Bundle 'pangloss/vim-javascript'
@@ -93,18 +90,13 @@ Bundle 'tpope/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'sunaku/vim-ruby-minitest'
 
-" Neocomplcache
-" Bundle 'Shougo/neocomplcache.vim'
-
-" Neosnippet
-" Bundle 'Shougo/neosnippet.vim'
-
-" Snipmate 
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "honza/vim-snippets"
-"Bundle "garbas/vim-snipmate"
+" Snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/vim-snippets"
+Bundle "garbas/vim-snipmate"
 
 " Themes
 Bundle 'altercation/vim-colors-solarized'
@@ -135,19 +127,23 @@ set noshowmode                    " Hide the default mode text (e.g. -- INSERT -
 set complete=.,w,b,u,i
 set foldmethod=manual
 set pastetoggle=<F9>
-set mouse=a
-" autocmd InsertEnter * set cul
-" autocmd InsertLeave * set nocul
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 set timeoutlen=1000 ttimeoutlen=0
 
 " Line width
 " http://blog.ezyang.com/2010/03/vim-textwidth/
-" set tw=78
-" set fo+=t
-"augroup vimrc_autocmds
-  "autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
-  "autocmd BufEnter * match OverLength /\%78v.*/
-"augroup END
+set tw=78
+set fo+=t
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
+  autocmd BufEnter * match OverLength /\%78v.*/
+augroup END
+
+" Disabled for now, it's slow
+" Line numbers (relative in normal, absolute in insert)
+" autocmd InsertEnter * :set number
+" autocmd InsertLeave * :set relativenumber
 
 " Command line
 set history=1000                    " keep 1000 lines of command line history
@@ -191,7 +187,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let NERDTreeIgnore=['\.rbc$', '\~$']
 
 " Tagbar
-let g:tabgbar_ctags_bin="/usr/local/bin/ctags"
+"let g:tabgbar_ctags_bin="/opt/boxen/homebrew/bin/ctags"
 let g:tagbar_type_ruby = {
       \ 'kinds' : [
       \ 'm:modules',
@@ -208,9 +204,6 @@ let g:tagbar_type_ruby = {
 
 "CtrlP
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-" Easy-motion
-let g:EasyMotion_leader_key = '<Space>'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -219,7 +212,7 @@ nmap <F3> :TagbarToggle<CR>
 nnoremap <F4> :GundoToggle<CR>
 
 " Ack
-map <leader>/ :Ack 
+map <leader>/ :Ack
 
 " Write and quit on the fly
 map <leader>w :write<CR>
@@ -261,9 +254,9 @@ let g:vroom_use_vimux = 1
 let g:VimuxOrientation = "h"
 
 " CTags
-set tags=./.tags,.tags
-map <f5> :!/usr/local/bin/ctags -f .tags *<CR><CR>
-map <f6> :!bundle list --paths=true \| xargs /usr/local/bin/ctags -f .tags *<CR><CR>
+set tags=./tags,tags
+map <f5> :!/opt/boxen/homebrew/bin/ctags -f tags *<CR><CR>
+map <f6> :!bundle list --paths=true \| xargs /opt/boxen/homebrew/bin/ctags -f tags *<CR><CR>
 
 " Split
 map <leader>\| :vsplit<CR>

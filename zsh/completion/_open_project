@@ -1,3 +1,0 @@
-#compdef open_project
-
-compadd `tmuxinator ls | tail -n +2`

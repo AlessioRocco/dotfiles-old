@@ -3,9 +3,6 @@ alias l="ls"
 alias ll="ls -l"
 alias la="ls -lart"
 
-# project
-alias pj=change_project
-
 # bundle
 alias b="bundle"
 alias be="bundle exec"
@@ -44,7 +41,7 @@ alias tx="tmux"
 alias txk="tmux kill-session -t"
 
 # Tmuxinator
-alias p=open_project
+alias p="tmuxinator start"
 
 # Reload Shell
 alias reload="exec $SHELL"

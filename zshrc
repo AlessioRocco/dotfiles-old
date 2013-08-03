@@ -1,13 +1,3 @@
-# Projects path and project function
-PROJECTS_PATH="$HOME/projects"
-change_project(){
-  cd $PROJECTS_PATH/$1
-}
-
-open_project(){
-  tmuxinator $1
-}
-
 # Add ~/.zsh/completion to the functions path
 fpath=(~/.zsh/completion $fpath)
 
@@ -20,6 +10,7 @@ zstyle ':completion:*' menu select=2
 
 # automatically enter directories without cd
 setopt auto_cd
+cdpath=($HOME $HOME/Code)
 
 # use vim as an editor
 export EDITOR=vim

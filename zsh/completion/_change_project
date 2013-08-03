@@ -1,3 +1,0 @@
-#compdef change_project
-
-compadd `ls $PROJECTS_PATH`

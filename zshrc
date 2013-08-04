@@ -72,5 +72,15 @@ zle -N zle-keymap-select
 # Fix for vim in tmux
 export TERM="xterm-256color"
 
+# @see
+# http://vim.1045645.n5.nabble.com/MacVim-and-PATH-tt3388705.html#a3392363
+# # Ensure MacVim has same shell as Terminal
+if [[ -a /etc/zshenv ]]; then
+  sudo mv /etc/zshenv /etc/zprofile
+fi
+
 # Boxen
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+typeset -aU path
+path=( $path )

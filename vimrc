@@ -187,7 +187,6 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let NERDTreeIgnore=['\.rbc$', '\~$']
 
 " Tagbar
-"let g:tabgbar_ctags_bin="/opt/boxen/homebrew/bin/ctags"
 let g:tagbar_type_ruby = {
       \ 'kinds' : [
       \ 'm:modules',
@@ -255,8 +254,8 @@ let g:VimuxOrientation = "h"
 
 " CTags
 set tags=./tags,tags
-map <f5> :!/opt/boxen/homebrew/bin/ctags -f tags *<CR><CR>
-map <f6> :!bundle list --paths=true \| xargs /opt/boxen/homebrew/bin/ctags -f tags *<CR><CR>
+map <f5> :!ctags -f tags *<CR><CR>
+map <f6> :!bundle list --paths=true \| xargs ctags -f tags *<CR><CR>
 
 " Split
 map <leader>\| :vsplit<CR>

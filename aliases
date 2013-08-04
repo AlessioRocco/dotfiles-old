@@ -40,8 +40,8 @@ alias redis="redis-server /usr/local/etc/redis.conf"
 alias tx="tmux"
 alias txk="tmux kill-session -t"
 
-# Tmuxinator
-alias p="tmuxinator start"
+# Open Projects
+alias p="~/.projects/open"
 
 # Reload Shell
 alias reload="exec $SHELL"

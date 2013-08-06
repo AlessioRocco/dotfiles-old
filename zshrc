@@ -79,6 +79,9 @@ if [[ -a /etc/zshenv ]]; then
   sudo mv /etc/zshenv /etc/zprofile
 fi
 
+# Pulsar configuration repo
+export PULSAR_CONF_REPO="nebulab/pulsar-conf"
+
 # Boxen
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 

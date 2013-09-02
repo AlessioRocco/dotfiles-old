@@ -1,0 +1,20 @@
+#!/bin/sh 
+PROJECT_NAME='screenweek'
+PROJECT_DIR='~/Code/screenweek'
+tmux has-session -t $PROJECT_NAME 2>/dev/null
+if [ "$?" -eq 1 ] ; then
+  tmux new-session -n 'editor' -s $PROJECT_NAME -d
+  tmux send-keys -t $PROJECT_NAME:editor "cd $PROJECT_DIR; vim" C-m
+  tmux new-window -n 'shell' -c $PROJECT_DIR
+  tmux new-window -n 'console' -c $PROJECT_DIR
+  tmux send-keys -t $PROJECT_NAME:console 'script/console' C-m
+  tmux new-window -n 'database' -c $PROJECT_DIR
+  tmux send-keys -t $PROJECT_NAME:database 'script/database' C-m
+  tmux new-window -n 'server' -c $PROJECT_DIR
+  tmux send-keys -t $PROJECT_NAME:server 'script/server' C-m
+  tmux new-window -n 'log' -c $PROJECT_DIR
+  tmux send-keys -t $PROJECT_NAME:log 'tail -f log/development.log' C-m
+else
+  echo "Session found. Connecting."
+fi
+tmux attach-session -t $PROJECT_NAME

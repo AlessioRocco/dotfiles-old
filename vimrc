@@ -25,8 +25,8 @@ Bundle 'gmarik/vundle'
 " The ultimate vim statusline utility
 Bundle 'Lokaltog/powerline'
 
-" Vim plugin for the Perl module / CLI script 'ack'
-Bundle 'mileszs/ack.vim'
+" Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / "CLI script 'ack'
+Bundle 'rking/ag.vim'
 
 " Vim plugin that displays tags in a window, ordered by class etc.
 Bundle 'majutsushi/tagbar'
@@ -210,8 +210,8 @@ map <F2> :NERDTreeToggle<CR>
 nmap <F3> :TagbarToggle<CR>
 nnoremap <F4> :GundoToggle<CR>
 
-" Ack
-map <leader>/ :Ack
+" Ag
+map <leader>/ :Ag
 
 " Write and quit on the fly
 map <leader>w :write<CR>

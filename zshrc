@@ -62,9 +62,6 @@ export TERM="xterm-256color"
 setopt auto_cd
 cdpath=($HOME $HOME/Code)
 
-# enable colored output from ls, etc
-export CLICOLOR=1
-
 # @see
 # http://vim.1045645.n5.nabble.com/MacVim-and-PATH-tt3388705.html#a3392363
 # # Ensure MacVim has same shell as Terminal
@@ -76,7 +73,6 @@ fi
 export PULSAR_CONF_REPO="nebulab/pulsar-conf"
 
 # Aliases
-alias t="todo.sh -d ~/.todo_config"
 alias eh="sudo vim /etc/hosts"
 alias pryr="pry -r ./config/environment.rb"
 alias ms="mongod run --config /usr/local/etc/mongod.conf"

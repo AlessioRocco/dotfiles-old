@@ -211,7 +211,7 @@ nmap <F3> :TagbarToggle<CR>
 nnoremap <F4> :GundoToggle<CR>
 
 " Ag
-map <leader>/ :Ag
+map <leader>/ :Ag<space>
 
 " Write and quit on the fly
 map <leader>w :write<CR>

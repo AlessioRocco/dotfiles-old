@@ -11,3 +11,5 @@ newsbeuter/cache.db
 newsbeuter/cache.db.lock
 newsbeuter/cache.db-journal
 tmux-powerlinerc
+config/fish/fish_history
+config/fish/fishd.*

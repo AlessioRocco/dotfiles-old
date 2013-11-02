@@ -8,6 +8,11 @@
 ""   Mislav <mislav.uniqpath.com/2011/12/vim-revisited>
 ""   Andrea Pavoni <https://github.com/apeacox/vim_starter_kit>
 
+" Vim needs a POSIX-Compliant shell. Fish is not.
+if $SHELL =~ 'bin/fish'
+  set shell=/bin/zsh
+endif
+
 set nocompatible                  " use Vim, not Vi
 filetype off                      " automatically detect file types. Also equired for vundle.
 
@@ -22,8 +27,8 @@ Bundle 'gmarik/vundle'
 
 " Utils
 
-" The ultimate vim statusline utility
-Bundle 'Lokaltog/powerline'
+" lean & mean status/tabline for vim that's light as air
+Bundle 'bling/vim-airline'
 
 " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / "CLI script 'ack'
 Bundle 'rking/ag.vim'
@@ -136,8 +141,8 @@ set timeoutlen=1000 ttimeoutlen=0
 set tw=78
 set fo+=t
 "augroup vimrc_autocmds
-  "autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
-  "autocmd BufEnter * match OverLength /\%78v.*/
+"autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
+"autocmd BufEnter * match OverLength /\%78v.*/
 "augroup END
 
 " Disabled for now, it's slow
@@ -180,8 +185,8 @@ set noswapfile                    " http://robots.thoughtbot.com/post/1873940257
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+" Airline
+let g:airline_powerline_fonts = 1
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']

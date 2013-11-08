@@ -96,6 +96,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'sunaku/vim-ruby-minitest'
+Bundle 'mustache/vim-mode'
 
 " Snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"

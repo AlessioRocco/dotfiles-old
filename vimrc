@@ -191,6 +191,7 @@ set noswapfile                    " http://robots.thoughtbot.com/post/1873940257
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']

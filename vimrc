@@ -65,7 +65,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim'
 
 " vim-numbertoggle - Toggles between relative and absolute line numbers automatically
-Bundle "jeffkreeftmeijer/vim-numbertoggle"
+" Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
 " Vimux
 Bundle 'benmills/vimux'
@@ -191,7 +191,6 @@ set noswapfile                    " http://robots.thoughtbot.com/post/1873940257
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']
@@ -261,6 +260,7 @@ map gr :R<CR>
 " Run Test
 let g:vroom_use_vimux = 1
 let g:VimuxOrientation = "h"
+let g:VimuxHeight = 40
 
 " CTags
 set tags=./tags,tags

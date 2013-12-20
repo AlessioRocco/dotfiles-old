@@ -65,7 +65,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'sjl/gundo.vim'
 
 " vim-numbertoggle - Toggles between relative and absolute line numbers automatically
-" Bundle "jeffkreeftmeijer/vim-numbertoggle"
+Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
 " Vimux
 Bundle 'benmills/vimux'

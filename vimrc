@@ -133,7 +133,6 @@ set backspace=indent,eol,start    " allow backspacing over everything in insert 
 set autoindent                    " always set autoindenting on
 let mapleader=","                 " change mapleader key
 set noshowmode                    " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set complete=.,w,b,u,i
 set foldmethod=manual
 set pastetoggle=<F9>
 autocmd InsertEnter * set cul

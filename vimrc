@@ -141,15 +141,6 @@ set timeoutlen=1000 ttimeoutlen=0
 " http://blog.ezyang.com/2010/03/vim-textwidth/
 set tw=78
 set fo+=t
-"augroup vimrc_autocmds
-"autocmd BufEnter * highlight OverLength ctermbg=LightGrey guibg=#502020
-"autocmd BufEnter * match OverLength /\%78v.*/
-"augroup END
-
-" Disabled for now, it's slow
-" Line numbers (relative in normal, absolute in insert)
-" autocmd InsertEnter * :set number
-" autocmd InsertLeave * :set relativenumber
 
 " Command line
 set history=1000                    " keep 1000 lines of command line history

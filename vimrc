@@ -268,6 +268,10 @@ map <leader>y "*y
 " Paste from system clipboard
 map <leader>p "*p
 
+" Add pry to debug
+map <Leader>bp obinding.pry<esc>:w<cr>
+map <Leader>bP Obinding.pry<esc>:w<cr>
+
 "ruby
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1

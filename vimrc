@@ -271,34 +271,3 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custum scripts
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Conditionally autocreating non-existent directories
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup AutoMkdir
-  autocmd!
-  autocmd  BufNewFile  *  :call EnsureDirExists()
-augroup END
-function! EnsureDirExists ()
-  let required_dir = expand("%:h")
-  if !isdirectory(required_dir)
-    call AskQuit("Directory '" . required_dir . "' doesn't exist.", "&Create it?")
-
-    try
-      call mkdir( required_dir, 'p' )
-    catch
-      call AskQuit("Can't create '" . required_dir . "'", "&Continue anyway?")
-    endtry
-  endif
-endfunction
-
-function! AskQuit (msg, proposed_action)
-  if confirm(a:msg, "&Quit?\n" . a:proposed_action) == 1
-    exit
-  endif
-endfunction
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

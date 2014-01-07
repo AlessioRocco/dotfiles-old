@@ -248,6 +248,7 @@ let g:VimuxOrientation = "h"
 let g:VimuxHeight = 40
 
 " CTags
+let g:tagbar_ctags_bin = '/opt/boxen/homebrew/bin/ctags'
 set tags=./tags,tags
 map <f5> :!ctags -f tags *<CR><CR>
 map <f6> :!bundle list --paths=true \| xargs ctags -f tags *<CR><CR>

@@ -62,7 +62,7 @@ Bundle 'tpope/vim-git'
 Bundle 'godlygeek/tabular'
 
 " Graph your Vim undo tree in style
-" Bundle 'sjl/gundo.vim'
+Bundle 'sjl/gundo.vim'
 
 " vim-numbertoggle - Toggles between relative and absolute line numbers automatically
 Bundle "jeffkreeftmeijer/vim-numbertoggle"

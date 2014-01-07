@@ -54,6 +54,9 @@ Bundle 'tsaleh/vim-matchit'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Bundle 'kien/ctrlp.vim'
 
+" Supertab - Perform all your vim insert mode completions with Tab
+Bundle 'ervandew/supertab'
+
 " Vim Git
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'

@@ -14,7 +14,7 @@ if $SHELL =~ 'bin/fish'
 endif
 
 set nocompatible                  " use Vim, not Vi
-filetype off                      " automatically detect file types. Also equired for vundle.
+filetype off                      " automatically detect file types. Also required for vundle.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " START Vundle setup
@@ -62,7 +62,7 @@ Bundle 'tpope/vim-git'
 Bundle 'godlygeek/tabular'
 
 " Graph your Vim undo tree in style
-Bundle 'sjl/gundo.vim'
+" Bundle 'sjl/gundo.vim'
 
 " vim-numbertoggle - Toggles between relative and absolute line numbers automatically
 Bundle "jeffkreeftmeijer/vim-numbertoggle"
@@ -70,13 +70,10 @@ Bundle "jeffkreeftmeijer/vim-numbertoggle"
 " Vimux
 Bundle 'benmills/vimux'
 
-" Vim Ruby Debugger
-" Bundle 'astashov/vim-ruby-debugger'
-
 " Vroom
 Bundle 'skalnik/vim-vroom'
 
-" Vitality
+" Vitality - Make Vim play nicely with iTerm 2 and tmux.
 Bundle 'sjl/vitality.vim'
 
 " Gitgutter
@@ -206,9 +203,6 @@ let g:tagbar_type_ruby = {
       \ 'F:singleton methods'
       \ ]
       \ }
-
-" Ruby Debugger
-" let g:ruby_debugger_progname = 'mvim'
 
 "CtrlP
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'

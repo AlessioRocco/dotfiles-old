@@ -9,9 +9,9 @@
 ""   Andrea Pavoni <https://github.com/apeacox/vim_starter_kit>
 
 " Vim needs a POSIX-Compliant shell. Fish is not.
-if $SHELL =~ 'bin/fish'
-  set shell=/bin/zsh
-endif
+" if $SHELL =~ 'bin/fish'
+set shell=/bin/zsh
+" endif
 
 set nocompatible                  " use Vim, not Vi
 filetype off                      " automatically detect file types. Also required for vundle.
@@ -184,6 +184,7 @@ let g:airline_powerline_fonts = 1
 
 " NERDTree
 let NERDTreeIgnore=['\.rbc$', '\~$']
+let NERDTreeShowLineNumbers=1
 
 " Tagbar
 let g:tagbar_type_ruby = {

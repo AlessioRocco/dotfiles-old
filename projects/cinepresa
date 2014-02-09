@@ -7,7 +7,7 @@ if [ "$?" -eq 1 ] ; then
   tmux send-keys -t $PROJECT_NAME:editor "cd $PROJECT_DIR; vim" C-m
   tmux new-window -n 'shell' -c $PROJECT_DIR
   tmux new-window -n 'console' -c $PROJECT_DIR
-  tmux send-keys -t $PROJECT_NAME:console 'pryr' C-m
+  tmux send-keys -t $PROJECT_NAME:console 'rails c' C-m
   tmux new-window -n 'database' -c $PROJECT_DIR
   tmux send-keys -t $PROJECT_NAME:database 'rails db' C-m
   tmux new-window -n 'server' -c $PROJECT_DIR

@@ -241,6 +241,7 @@ nmap <leader>gr :Gread<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gc :Gcommit<CR>
+nmap <leader>gb :Gbrowse<CR>
 
 " Rails stuff
 map ga :A<CR>

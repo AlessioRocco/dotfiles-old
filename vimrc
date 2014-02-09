@@ -141,8 +141,9 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Line width
 " http://blog.ezyang.com/2010/03/vim-textwidth/
-set tw=78
-set fo+=t
+set textwidth=80
+set formatoptions+=t
+set colorcolumn=80
 
 " Command line
 set history=1000                    " keep 1000 lines of command line history

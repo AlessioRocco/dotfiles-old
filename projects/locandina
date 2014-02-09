@@ -6,6 +6,8 @@ if [ "$?" -eq 1 ] ; then
   tmux new-session -n 'editor' -s $PROJECT_NAME -d
   tmux send-keys -t $PROJECT_NAME:editor "cd $PROJECT_DIR; vim" C-m
   tmux new-window -n 'shell' -c $PROJECT_DIR
+  tmux new-window -n 'server' -c $PROJECT_DIR
+  tmux send-keys -t $PROJECT_NAME:server 'cake server' C-m
   tmux select-window -t :1
 else
   echo "Session found. Connecting."

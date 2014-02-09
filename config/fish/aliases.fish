@@ -17,7 +17,6 @@ alias la "ls -la"
 alias ll "ls -l"
 
 alias eh="sudo vim /etc/hosts"
-alias pryr="pry -r ./config/environment.rb"
 alias ms="mongod run --config /usr/local/etc/mongod.conf"
 alias redis="redis-server /usr/local/etc/redis.conf"
 alias p="~/.projects/open"

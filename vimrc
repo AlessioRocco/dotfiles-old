@@ -54,9 +54,6 @@ Bundle 'tsaleh/vim-matchit'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Bundle 'kien/ctrlp.vim'
 
-" Supertab - Perform all your vim insert mode completions with Tab
-Bundle 'ervandew/supertab'
-
 " Vim Git
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -162,7 +159,7 @@ set ignorecase                    " searches are case insensitive...
 set smartcase                     " ... unless they contain at least one capital letter
 nnoremap <CR> :noh<CR>            " This unsets the 'last search pattern' register by hitting return
 
-" Tab completion
+" autocompletion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.png,*.PNG,*.JPG,*.jpg,*.GIF,*.gif,vendor/**,coverage/**,tmp/**,rdoc/**,*/tmp/*,*.so,*.swp,*.zip
 

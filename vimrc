@@ -199,7 +199,10 @@ let g:tagbar_type_ruby = {
 
 "CtrlP
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Spacejam
+let g:spacejam_filetypes = 'ruby,javascript,vim,perl,sass,scss,css,coffee,haml,markdown,python,java,php'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F2> :NERDTreeToggle<CR>

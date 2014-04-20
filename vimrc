@@ -135,6 +135,7 @@ set pastetoggle=<F9>
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 set timeoutlen=1000 ttimeoutlen=0
+set mouse=a
 
 " Line width
 " http://blog.ezyang.com/2010/03/vim-textwidth/
@@ -252,6 +253,7 @@ map gr :R<CR>
 let g:vroom_use_vimux = 1
 let g:VimuxOrientation = "h"
 let g:VimuxHeight = 40
+let g:vroom_use_bundle_exec = 0
 
 " CTags
 let g:tagbar_ctags_bin = '/opt/boxen/homebrew/bin/ctags'

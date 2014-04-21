@@ -1,0 +1,20 @@
+#!/bin/sh
+
+brew cask install synology-assistant
+brew cask install synology-cloud-station
+brew cask install synology-photo-station-uploader
+brew cask install google-chrome
+brew cask install firefox
+brew cask install virtualbox
+brew cask install caffeine
+brew cask install teamviewer
+brew cask install spotify
+brew cask install transmit
+brew cask install chronomate
+brew cask install the-unarchiver
+brew cask install kindle
+brew cask install iterm2
+brew cask install flux
+brew cask install cleanmymac
+brew cask install clipmenu
+

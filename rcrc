@@ -1,0 +1,2 @@
+EXCLUDES="README.md LICENSE Brewfile"
+DOTFILES_DIRS="$HOME/Code/nebulab_dotfiles $HOME/Code/dotfiles"

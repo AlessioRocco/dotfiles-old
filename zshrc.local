@@ -1,6 +1,3 @@
-# Make vim the default editor
-export EDITOR="vim"
-
 # vimrc
 export MYVIMRC="$HOME/.vimrc"
 
@@ -31,9 +28,6 @@ alias ms="mongod run --config /usr/local/etc/mongod.conf"
 alias redis="redis-server /usr/local/etc/redis.conf"
 alias p="~/.projects/open"
 alias reload="exec $SHELL"
-
-# Boxen environment
-[ -f "/opt/boxen/env.sh" ] && source "/opt/boxen/env.sh"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

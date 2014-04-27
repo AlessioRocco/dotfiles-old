@@ -1,0 +1,21 @@
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'scrooloose/nerdtree'
+Bundle 'benmills/vimux'
+Bundle 'skalnik/vim-vroom'
+Bundle 'tpope/vim-haml'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-markdown'
+Bundle 'othree/html5.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'sunaku/vim-ruby-minitest'
+Bundle 'mustache/vim-mode'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/vim-snippets"
+Bundle "garbas/vim-snipmate"
+Bundle 'rondale-sc/vim-spacejam'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'rking/ag.vim'
+Bundle 'airblade/vim-gitgutter'
+

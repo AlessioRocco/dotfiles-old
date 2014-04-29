@@ -1,6 +1,6 @@
 #!/bin/sh 
 PROJECT_NAME='popcorn'
-PROJECT_DIR='~/Code/popcorn'
+PROJECT_DIR="$HOME/Code/popcorn"
 tmux has-session -t $PROJECT_NAME 2>/dev/null
 if [ "$?" -eq 1 ] ; then
   tmux new-session -n 'editor' -s $PROJECT_NAME -d

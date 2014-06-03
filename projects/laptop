@@ -1,0 +1,13 @@
+#!/bin/sh 
+PROJECT_NAME='laptop'
+PROJECT_DIR="$HOME/Code/laptop"
+tmux has-session -t $PROJECT_NAME 2>/dev/null
+if [ "$?" -eq 1 ] ; then
+  tmux new-session -n 'editor' -s $PROJECT_NAME -d
+  tmux send-keys -t $PROJECT_NAME:editor "cd $PROJECT_DIR; vim" C-m
+  tmux new-window -n 'shell' -c $PROJECT_DIR
+  tmux select-window -t :1
+else
+  echo "Session found. Connecting."
+fi
+tmux attach-session -t $PROJECT_NAME

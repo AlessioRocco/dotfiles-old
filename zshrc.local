@@ -18,16 +18,4 @@ if [[ -a /etc/zshenv ]]; then
   sudo mv /etc/zshenv /etc/zprofile
 fi
 
-# Pulsar configuration repo
-export PULSAR_CONF_REPO="nebulab/pulsar-conf"
-
-# Aliases
-alias eh="sudo vim /etc/hosts"
-alias pryr="pry -r ./config/environment.rb"
-alias ms="mongod run --config /usr/local/etc/mongod.conf"
-alias redis="redis-server /usr/local/etc/redis.conf"
-alias p="~/.projects/open"
-alias reload="exec $SHELL"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="./bin:/usr/local/bin:/usr/local/heroku/bin:./node_modules/.bin:$PATH"

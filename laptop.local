@@ -1,7 +1,5 @@
 #!/bin/sh
 
-brew install postgresql
-
 brew cask install synology-assistant
 brew cask install synology-cloud-station
 brew cask install synology-photo-station-uploader
@@ -11,7 +9,6 @@ brew cask install spotify
 brew cask install transmit
 brew cask install chronomate
 brew cask install kindle
-brew cask install flux
 brew cask install cleanmymac
 brew cask install clipmenu
-
+brew cask install fluid

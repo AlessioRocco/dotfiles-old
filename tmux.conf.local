@@ -1,63 +1,23 @@
-set -sg escape-time 0
-bind r source-file ~/.tmux.conf \; display "Reloaded!"
+# This tmux statusbar config was created by tmuxline.vim
+# on Ven, 27 Giu 2014
 
-bind | split-window -h
-bind - split-window -v
-
-bind -r H resize-pane -L 5
-bind -r J resize-pane -D 5
-bind -r K resize-pane -U 5
-bind -r L resize-pane -R 5
-
-# Optional keybindings: Enter Copy-mode and Copy and Paste sorta like Vim.
-unbind p
-bind p paste-buffer
-# Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
-
-setw -g monitor-activity on
-set -g visual-activity on
-
-# Fix tmux copy bug
-set-option -g default-command "reattach-to-user-namespace -l zsh"
-
-set -g status on
-set -g status-utf8 on
-set -g status-interval 2
-set -g status-left ' #S '
-set -g window-status-format "#[fg=colour231,bg=colour234] #I #[fg=colour231,bold]#W #[fg=colour31,bg=colour234,nobold]"
-set -g window-status-current-format "#[fg=colour231,bg=colour31] #I #[fg=colour231,bold]#W #[fg=colour31,bg=colour234,nobold]"
-set -g window-status-separator ""
-
-#### COLOUR (Solarized 256)
-
-# default statusbar colors
-set-option -g status-bg colour235 #base02
-set-option -g status-fg colour136 #yellow
-set-option -g status-attr default
-
-# default window title colors
-set-window-option -g window-status-fg colour244 #base0
-set-window-option -g window-status-bg default
-#set-window-option -g window-status-attr dim
-
-# active window title colors
-set-window-option -g window-status-current-fg colour166 #orange
-set-window-option -g window-status-current-bg default
-#set-window-option -g window-status-current-attr bright
-
-# pane border
-set-option -g pane-border-fg colour235 #base02
-set-option -g pane-active-border-fg colour240 #base01
-
-# message text
-set-option -g message-bg colour235 #base02
-set-option -g message-fg colour166 #orange
-
-# pane number display
-set-option -g display-panes-active-colour colour33 #blue
-set-option -g display-panes-colour colour166 #orange
-
-# clock
-set-window-option -g clock-mode-colour colour64 #green
+set -g status-justify "left"
+set -g status "on"
+set -g status-left-style "none"
+set -g message-command-style "fg=colour145,bg=colour236"
+set -g status-right-style "none"
+set -g pane-active-border-style "fg=colour25"
+set -g status-utf8 "on"
+set -g status-style "bg=colour233,none"
+set -g message-style "fg=colour145,bg=colour236"
+set -g pane-border-style "fg=colour236"
+set -g status-right-length "100"
+set -g status-left-length "100"
+setw -g window-status-activity-attr "none"
+setw -g window-status-activity-style "fg=colour25,bg=colour233,none"
+setw -g window-status-separator ""
+setw -g window-status-style "fg=colour240,bg=colour233,none"
+set -g status-left "#[fg=colour195,bg=colour25,bold] #S #[fg=colour25,bg=colour233,nobold,nounderscore,noitalics]"
+set -g status-right "#[fg=colour236,bg=colour233,nobold,nounderscore,noitalics]#[fg=colour145,bg=colour236] %Y-%m-%d  %H:%M #[fg=colour25,bg=colour236,nobold,nounderscore,noitalics]#[fg=colour195,bg=colour25] #h "
+setw -g window-status-format "#[fg=colour240,bg=colour233] #I #[fg=colour240,bg=colour233] #W "
+setw -g window-status-current-format "#[fg=colour233,bg=colour236,nobold,nounderscore,noitalics]#[fg=colour145,bg=colour236] #I #[fg=colour145,bg=colour236] #W #[fg=colour236,bg=colour233,nobold,nounderscore,noitalics]"

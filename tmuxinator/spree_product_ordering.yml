@@ -1,0 +1,6 @@
+name: spree_product_ordering
+root: ~/Code/spree_product_ordering
+pre_window: rbenv shell 1.9.3-p429
+windows:
+  - editor: vim
+  - shell:

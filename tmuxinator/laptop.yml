@@ -1,0 +1,5 @@
+name: laptop
+root: ~/Code/laptop
+windows:
+  - editor: vim
+  - shell:

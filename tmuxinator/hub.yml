@@ -1,0 +1,10 @@
+name: hub
+root: ~/Code/hub
+windows:
+  - editor: vim
+  - shell:
+  - console: rails c
+  - database: rails db
+  - server: rails s
+  - log: tail -f log/development.log
+  - invoker: invoker start invoker.ini -d

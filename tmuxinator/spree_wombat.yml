@@ -1,0 +1,5 @@
+name: spree_wombat
+root: ~/Code/spree_wombat
+windows:
+  - editor: vim
+  - shell:

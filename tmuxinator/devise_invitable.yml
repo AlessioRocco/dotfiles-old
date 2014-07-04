@@ -1,0 +1,5 @@
+name: devise_invitable
+root: ~/Code/devise_invitable
+windows:
+  - editor: vim
+  - shell:

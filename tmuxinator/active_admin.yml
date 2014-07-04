@@ -1,0 +1,5 @@
+name: active_admin
+root: ~/Code/active_admin
+windows:
+  - editor: vim
+  - shell:

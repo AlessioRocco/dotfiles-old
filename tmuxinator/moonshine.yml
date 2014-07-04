@@ -1,0 +1,5 @@
+name: moonshine
+root: ~/Code/moonshine
+windows:
+  - editor: vim
+  - shell:

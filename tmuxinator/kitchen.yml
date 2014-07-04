@@ -1,0 +1,5 @@
+name: kitchen
+root: ~/Code/kitchen
+windows:
+  - editor: vim
+  - shell:

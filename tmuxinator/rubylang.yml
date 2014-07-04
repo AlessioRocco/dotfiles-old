@@ -1,0 +1,5 @@
+name: rubylang
+root: ~/Code/ruby-lang
+windows:
+  - editor: vim
+  - shell:

@@ -1,0 +1,5 @@
+name: spree_woodbolt_wombat
+root: ~/Code/spree_woodbolt_wombat
+windows:
+  - editor: vim
+  - shell:

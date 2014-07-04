@@ -1,0 +1,10 @@
+name: farmavillage
+root: ~/Code/farmavillage
+pre_window: rbenv shell 1.9.3-p429
+windows:
+  - editor: vim
+  - shell:
+  - console: rails c
+  - database: rails db
+  - log: tail -f log/development.log
+  - invoker: invoker start invoker.ini -d

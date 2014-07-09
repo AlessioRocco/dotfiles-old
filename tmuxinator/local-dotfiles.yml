@@ -1,6 +1,6 @@
 # ~/.tmuxinator/dotfiles.yml
 
-name: dotfiles_local
+name: local-dotfiles
 root: ~/dotfiles-local
 
 # Optional tmux socket

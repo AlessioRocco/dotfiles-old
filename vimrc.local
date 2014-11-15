@@ -1,52 +1,31 @@
-"" Vim configuration
-
-"" Credits:
-""   Gary Bernhardt  <destroyallsoftware.com>
-""   Drew Neil  <vimcasts.org>
-""   Tim Pope  <tbaggery.com>
-""   Janus  <github.com/carlhuda/janus>
-""   Mislav <mislav.uniqpath.com/2011/12/vim-revisited>
-""   Andrea Pavoni <https://github.com/apeacox/vim_starter_kit>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin Configurations
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set zsh as default shell
+set shell=/bin/zsh
 
 " Theme
+set antialias
 set t_Co=256
 set background=dark
-colorscheme solarized
-call togglebg#map("<F12>")
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+color solarized
 
 " Editing
 set encoding=utf-8                " sets the character encoding used inside Vim
 set fenc=utf-8                    " sets the character encoding for the file of this buffer
 set pastetoggle=<F9>
 set timeoutlen=1000 ttimeoutlen=0
-set mouse=a
+set mouse=a                       " enable mouse
+set hidden                        " Handle multiple buffers better.
 
 " Show current line in insert mode
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
-" Cursor shape
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 " Line numbers
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+set relativenumber
 
-" Command line
-set history=1001                    " keep 1000 lines of command line history
-set wildmenu                      " Enhanced command line completion.
-
-" Backups and swap files
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
-set nobackup                      " Don't make a backup before overwriting a file.
-set nowritebackup
-set noswapfile                    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,6 +46,10 @@ map <F2> :NERDTreeToggle<CR>
 " Ag
 map <leader>/ :Ag<space>
 
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " Write and quit on the fly
 map <leader>w :write<CR>
 map <leader>q :quit<CR>
@@ -77,12 +60,6 @@ map <leader>qa :quitall<CR>
 " Modify vimrc on the fly
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>vr :source $MYVIMRC<CR>
-
-" navigate split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
 
 " Vim Fugitive stuff
 nmap <leader>gs :Gstatus<CR>
@@ -101,6 +78,8 @@ let g:vroom_use_vimux = 1
 let g:VimuxOrientation = "h"
 let g:VimuxHeight = 40
 let g:vroom_use_bundle_exec = 0
+let g:vroom_use_binstubs = 1
+let g:vroom_map_keys = 1
 
 " Split
 map <leader>\| :vsplit<CR>
@@ -119,3 +98,4 @@ map <leader>p "*p
 map <Leader>bp obinding.pry<esc>:w<cr>
 map <Leader>bP Obinding.pry<esc>:w<cr>
 
+autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby

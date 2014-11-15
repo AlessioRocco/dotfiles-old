@@ -1,6 +1,8 @@
 # This tmux statusbar config was created by tmuxline.vim
 # on Ven, 27 Giu 2014
 
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+
 set -g status-justify "left"
 set -g status "on"
 set -g status-left-style "none"

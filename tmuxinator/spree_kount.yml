@@ -1,0 +1,5 @@
+name: spree_kount
+root: ~/Code/nutraboltcorp/spree_kount
+windows:
+  - editor: vim
+  - shell:

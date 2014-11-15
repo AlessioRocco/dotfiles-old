@@ -1,5 +1,5 @@
 name: demo_rep
-root: ~/Code/demo_rep
+root: ~/Code/nutraboltcorp/demo_rep
 windows:
   - editor: vim
   - shell:

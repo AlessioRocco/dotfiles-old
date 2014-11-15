@@ -1,5 +1,5 @@
 name: farmavillage
-root: ~/Code/farmavillage
+root: ~/Code/farma/farmavillage
 windows:
   - editor: vim
   - shell:

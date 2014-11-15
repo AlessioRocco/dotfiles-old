@@ -1,5 +1,5 @@
 name: moonshine
-root: ~/Code/moonshine
+root: ~/Code/gem/moonshine
 windows:
   - editor: vim
   - shell:

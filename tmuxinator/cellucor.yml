@@ -1,5 +1,5 @@
-name: royal-sport
-root: ~/Code/nutraboltcorp/royal-sport
+name: cellucor
+root: ~/Code/nutraboltcorp/cellucor.com
 windows:
   - editor: vim
   - shell:

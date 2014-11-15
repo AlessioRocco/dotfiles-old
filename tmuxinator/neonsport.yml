@@ -1,5 +1,5 @@
 name: neonsport
-root: ~/Code/neonsport
+root: ~/Code/nutraboltcorp/neonsport
 windows:
   - editor: vim
   - shell:

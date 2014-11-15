@@ -1,5 +1,5 @@
 name: farmawell
-root: ~/Code/farmawell
+root: ~/Code/farma/farmawell
 windows:
   - editor: vim
   - shell:

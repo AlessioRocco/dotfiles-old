@@ -1,5 +1,5 @@
 name: hub
-root: ~/Code/hub
+root: ~/Code/nutraboltcorp/hub
 windows:
   - editor: vim
   - shell:

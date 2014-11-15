@@ -1,5 +1,5 @@
 name: nutrabolt_integration_tests
-root: ~/Code/nutrabolt_integration_tests
+root: ~/Code/nutraboltcorp/nutrabolt_integration_tests
 windows:
   - editor: vim
   - royal: cd ~/Code/royal-sport; foreman run rails c

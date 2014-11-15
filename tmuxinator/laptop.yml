@@ -1,5 +1,5 @@
 name: laptop
-root: ~/Code/laptop
+root: ~/Code/nebulab/laptop
 windows:
   - editor: vim
   - shell:

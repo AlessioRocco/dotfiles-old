@@ -1,0 +1,5 @@
+name: spree_wombat_nutrabolt
+root: ~/Code/nutraboltcorp/spree_wombat
+windows:
+  - editor: vim
+  - shell:

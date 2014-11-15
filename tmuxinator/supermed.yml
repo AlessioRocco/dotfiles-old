@@ -1,9 +1,8 @@
-name: royal-sport
-root: ~/Code/nutraboltcorp/royal-sport
+name: supermed
+root: ~/Code/farma/supermed
 windows:
   - editor: vim
   - shell:
   - console: rails c
   - database: rails db
   - log: tail -f log/development.log
-  - invoker: invoker start invoker.ini -d

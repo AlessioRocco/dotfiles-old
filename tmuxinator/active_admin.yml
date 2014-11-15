@@ -1,5 +1,5 @@
 name: active_admin
-root: ~/Code/active_admin
+root: ~/Code/gem/active_admin
 windows:
   - editor: vim
   - shell:

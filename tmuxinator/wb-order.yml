@@ -1,5 +1,5 @@
 name: wb-order
-root: ~/Code/wb-order
+root: ~/Code/nutraboltcorp/wb-order
 windows:
   - editor: vim
   - shell:

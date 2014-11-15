@@ -1,0 +1,5 @@
+name: dev_tools
+root: ~/Code/nebulab/dev_tools
+windows:
+  - editor: vim
+  - shell:

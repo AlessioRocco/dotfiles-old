@@ -1,5 +1,5 @@
 name: farmasalute
-root: ~/Code/farmasalute
+root: ~/Code/farma/farmasalute
 windows:
   - editor: vim
   - shell:

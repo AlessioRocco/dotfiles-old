@@ -1,5 +1,7 @@
 #!/bin/sh
 
+brew install nvim
+
 brew cask install synology-assistant
 brew cask install synology-cloud-station
 brew cask install synology-photo-station-uploader

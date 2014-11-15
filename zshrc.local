@@ -17,5 +17,3 @@ cdpath=($HOME $HOME/Code)
 if [[ -a /etc/zshenv ]]; then
   sudo mv /etc/zshenv /etc/zprofile
 fi
-
-export PATH="./bin:/usr/local/bin:/usr/local/heroku/bin:./node_modules/.bin:$PATH"

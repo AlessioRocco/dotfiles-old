@@ -1,0 +1,15 @@
+# Adds the Code folder (with project) in the cd path
+set -x CDPATH . ~/Code
+
+# Make vim the default editor
+set -x EDITOR "nvim"
+
+# Editor for opening gems
+set -x BUNDLER_EDITOR "nvim"
+
+# Pulsar configuration repo
+set -x PULSAR_CONF_REPO "nebulab/pulsar-conf"
+
+# Set rbenv
+set -gx RBENV_ROOT ~/.rbenv
+. (rbenv init -|psub)

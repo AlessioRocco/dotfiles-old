@@ -1,0 +1,9 @@
+name: cavalier
+root: ~/Code/nutraboltcorp/cavalier
+pre: invoker start invoker.ini -d
+windows:
+  - editor: vim
+  - shell:
+  - console: rails c
+  - database: rails db
+  - logs: invoker tail cavalier

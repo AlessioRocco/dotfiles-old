@@ -1,5 +1,5 @@
-name: royal-sport
-root: ~/Code/nutraboltcorp/royal-sport
+name: sales_rep_store
+root: ~/Code/nutraboltcorp/sales_rep_store
 windows:
   - editor: vim
   - shell:

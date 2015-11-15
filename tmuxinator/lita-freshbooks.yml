@@ -1,0 +1,5 @@
+name: lita-freshbooks
+root: ~/Code/nebulab/lita-freshbooks
+windows:
+  - editor: vim
+  - shell:

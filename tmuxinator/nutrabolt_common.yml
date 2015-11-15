@@ -1,0 +1,5 @@
+name: nutrabolt_common
+root: ~/Code/nutraboltcorp/nutrabolt_common
+windows:
+  - editor: vim
+  - shell:

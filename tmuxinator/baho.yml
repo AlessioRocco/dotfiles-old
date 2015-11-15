@@ -1,0 +1,5 @@
+name: baho
+root: ~/Code/nebulab/baho
+windows:
+  - editor: vim
+  - shell:

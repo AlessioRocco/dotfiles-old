@@ -1,0 +1,5 @@
+name: lita-google-calendar
+root: ~/Code/nebulab/lita-google-calendar
+windows:
+  - editor: vim
+  - shell:

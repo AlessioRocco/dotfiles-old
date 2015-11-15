@@ -1,5 +1,0 @@
-name: spree_woodbolt_wombat
-root: ~/Code/nutraboltcorp/spree_woodbolt_wombat
-windows:
-  - editor: vim
-  - shell:

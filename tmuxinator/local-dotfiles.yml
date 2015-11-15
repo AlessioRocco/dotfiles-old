@@ -19,5 +19,5 @@ root: ~/dotfiles-local
 # tmux_command: byobu
 
 windows:
-  - editor: vim
+  - editor: eval $EDITOR
   - shell:

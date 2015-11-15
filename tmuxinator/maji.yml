@@ -1,0 +1,9 @@
+name: maji
+root: ~/Code/nebulab/maji
+windows:
+  - editor: vim
+  - shell:
+  - console: ./bin/rails c
+  - database: ./bin/rails db
+  - invoker_log: invoker tail farmapanel
+  - invoker: invoker start invoker.ini -d

@@ -1,0 +1,5 @@
+name: spree-client-js
+root: ~/Code/nebulab/spree-client-js
+windows:
+  - editor: vim
+  - shell:

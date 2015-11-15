@@ -1,0 +1,7 @@
+name: ember_spree_checkout
+root: ~/Code/ember/spree-checkout
+windows:
+  - editor: vim
+  - shell:
+  - server: ember server
+  - test: ember test --server

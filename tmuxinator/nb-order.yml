@@ -1,0 +1,9 @@
+name: nb-order
+root: ~/Code/nutraboltcorp/nb-order
+windows:
+  - editor: vim
+  - shell:
+  - console: ./bin/rails c
+  - database: ./bin/rails db
+  - log: invoker tail nborder
+  - invoker: invoker start invoker.ini -d

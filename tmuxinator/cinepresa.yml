@@ -1,5 +1,0 @@
-name: cinepresa
-root: ~/Code/bradk/cinepresa
-windows:
-  - editor: vim
-  - shell:

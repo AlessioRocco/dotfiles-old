@@ -1,0 +1,9 @@
+name: floyd
+root: ~/Code/floyd/floyd
+pre: invoker start invoker.ini -d
+windows:
+  - editor: vim
+  - shell:
+  - console: rails c
+  - database: rails db
+  - log: invoker tail floyd

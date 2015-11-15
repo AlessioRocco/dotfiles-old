@@ -1,0 +1,5 @@
+name: spree_conditional_promotion_actions
+root: ~/Code/spree_extensions/spree_conditional_promotion_actions
+windows:
+  - editor: vim
+  - shell:

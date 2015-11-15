@@ -1,0 +1,5 @@
+name: spree_variant_options
+root: ~/Code/spree_extensions/spree_variant_options
+windows:
+  - editor: vim
+  - shell:

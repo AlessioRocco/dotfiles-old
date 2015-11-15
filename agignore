@@ -1,8 +1,0 @@
-*.log
-log
-tags
-tmp
-chef
-coverage
-perf
-spec/vcr

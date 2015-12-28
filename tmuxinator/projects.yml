@@ -1,5 +1,0 @@
-name: hub
-root: ~/Code/dotfiles/personal/tmuxinator
-windows:
-  - editor: $EDITOR
-  - shell:

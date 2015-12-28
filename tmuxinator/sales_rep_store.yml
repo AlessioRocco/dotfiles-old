@@ -1,8 +1,0 @@
-name: sales_rep_store
-root: ~/Code/nutraboltcorp/sales_rep_store
-windows:
-  - editor: vim
-  - shell:
-  - console: rails c
-  - database: rails db
-  - logs: invoker tail royalsport

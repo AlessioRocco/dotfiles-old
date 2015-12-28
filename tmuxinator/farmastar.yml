@@ -1,5 +1,0 @@
-name: farmastar
-root: ~/Code/farma/farmastar
-windows:
-  - editor: vim
-  - shell:

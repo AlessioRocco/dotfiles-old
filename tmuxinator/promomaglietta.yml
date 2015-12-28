@@ -1,9 +1,0 @@
-name: promomaglietta
-root: ~/Code/promomaglietta
-windows:
-  - editor: vim
-  - shell:
-  - console: ./bin/rails c
-  - database: ./bin/rails db
-  - log: invoker tail promomaglietta
-  - invoker: invoker start invoker.ini -d

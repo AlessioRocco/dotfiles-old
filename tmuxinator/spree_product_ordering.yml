@@ -1,5 +1,0 @@
-name: spree_product_ordering
-root: ~/Code/spree_extensions/spree_product_ordering
-windows:
-  - editor: vim
-  - shell:

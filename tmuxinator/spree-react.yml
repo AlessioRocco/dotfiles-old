@@ -1,5 +1,0 @@
-name: spree-react
-root: ~/Code/nebulab/spree-react
-windows:
-  - editor: vim
-  - shell:

@@ -1,5 +1,0 @@
-name: spree_comments
-root: ~/Code/spree_extensions/spree_comments
-windows:
-  - editor: vim
-  - shell:

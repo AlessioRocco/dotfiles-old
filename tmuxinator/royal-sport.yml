@@ -1,8 +1,0 @@
-name: royal-sport
-root: ~/Code/nutraboltcorp/royal-sport
-windows:
-  - editor: vim
-  - shell:
-  - console: rails c
-  - database: rails db
-  - logs: invoker tail royalsport

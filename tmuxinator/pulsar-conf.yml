@@ -1,5 +1,0 @@
-name: pulsar-conf
-root: ~/Code/nebulab/pulsar-conf
-windows:
-  - editor: vim
-  - shell:

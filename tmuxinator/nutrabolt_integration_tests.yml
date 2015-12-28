@@ -1,9 +1,0 @@
-name: nutrabolt_integration_tests
-root: ~/Code/nutraboltcorp/nutrabolt_integration_tests
-windows:
-  - editor: vim
-  - royal: cd ~/Code/royal-sport; foreman run rails c
-  - neon: cd ~/Code/neonsport; foreman run rails c
-  - nb-order: cd ~/Code/wb-order; foreman run rails c
-  - hub: cd ~/Code/hub; foreman run rails c
-  - invoker: invoker start invoker.ini -d

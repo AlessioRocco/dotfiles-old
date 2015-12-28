@@ -1,8 +1,0 @@
-name: neonsport
-root: ~/Code/nutraboltcorp/neonsport
-windows:
-  - editor: vim
-  - shell:
-  - console: be rails c
-  - database: be rails db
-  - logs: ikt neonsport

@@ -1,5 +1,0 @@
-name: spree
-root: ~/Code/gem/spree
-windows:
-  - editor: vim
-  - shell:

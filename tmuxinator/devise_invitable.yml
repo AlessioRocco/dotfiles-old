@@ -1,5 +1,0 @@
-name: devise_invitable
-root: ~/Code/gem/devise_invitable
-windows:
-  - editor: vim
-  - shell:

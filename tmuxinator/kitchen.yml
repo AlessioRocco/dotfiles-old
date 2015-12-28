@@ -1,5 +1,0 @@
-name: kitchen
-root: ~/Code/nebulab/kitchen
-windows:
-  - editor: vim
-  - shell:

@@ -1,8 +1,0 @@
-name: supermed
-root: ~/Code/farma/supermed
-windows:
-  - editor: vim
-  - shell:
-  - console: rails c
-  - database: rails db
-  - log: tail -f log/development.log

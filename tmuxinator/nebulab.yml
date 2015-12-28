@@ -1,5 +1,0 @@
-name: nebulab
-root: ~/Code/nebulab/nebulab
-windows:
-  - editor: vim
-  - shell:

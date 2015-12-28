@@ -1,5 +1,0 @@
-name: spree_exclusive_products
-root: ~/Code/spree_extensions/spree_exclusive_products
-windows:
-  - editor: vim
-  - shell:

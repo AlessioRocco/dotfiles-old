@@ -1,5 +1,0 @@
-name: spree_store_credits
-root: ~/Code/spree_extensions/spree_store_credits
-windows:
-  - editor: vim
-  - shell:

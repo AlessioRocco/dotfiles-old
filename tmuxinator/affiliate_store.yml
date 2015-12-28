@@ -1,8 +1,0 @@
-name: affiliate_store
-root: ~/Code/nutraboltcorp/affiliate_store
-windows:
-  - editor: vim
-  - shell:
-  - console: rails c
-  - database: rails db
-  - logs: invoker tail affiliate_store

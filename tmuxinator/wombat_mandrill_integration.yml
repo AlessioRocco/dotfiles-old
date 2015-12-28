@@ -1,5 +1,0 @@
-name: wombat_mandrill_integration
-root: ~/Code/wombat/mandrill_integration
-windows:
-  - editor: vim
-  - shell:

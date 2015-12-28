@@ -1,5 +1,0 @@
-name: spree_handling_fees
-root: ~/Code/spree_extensions/spree_handling_fees
-windows:
-  - editor: vim
-  - shell:

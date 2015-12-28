@@ -1,5 +1,0 @@
-name: spree_simple_reports
-root: ~/Code/spree_extensions/spree_simple_reports
-windows:
-  - editor: vim
-  - shell:

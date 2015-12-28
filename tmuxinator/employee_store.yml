@@ -1,9 +1,0 @@
-name: employee_store
-root: ~/Code/nutraboltcorp/employee_store
-windows:
-  - editor: vim
-  - shell:
-  - console: rails c
-  - database: rails db
-  - log: tail -f log/development.log
-  - invoker: invoker start invoker.ini -d

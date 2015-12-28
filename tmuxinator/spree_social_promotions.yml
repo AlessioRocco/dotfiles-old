@@ -1,5 +1,0 @@
-name: spree_social_promotions
-root: ~/Code/nebulab/spree_social_promotions
-windows:
-  - editor: vim
-  - shell:

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+brew tap neovim/homebrew-neovim
+brew_install_or_upgrade --HEAD neovim
+
+brew cask install synology-assistant
+brew cask install synology-cloud-station
+brew cask install synology-photo-station-uploader
+brew cask install virtualbox
+brew cask install teamviewer
+brew cask install transmit
+brew cask install kindle
+brew cask install cleanmymac
+brew cask install clipmenu
+brew cask install fluid
+
+fancy_echo "Changing your shell to fish ..."
+  chsh -s $(which fish)

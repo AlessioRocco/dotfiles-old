@@ -1,14 +1,14 @@
 [user]
   name = Alessio Rocco
   email = alessio.rocco.lt@gmail.com
+[github]
+  user = AlessioRocco
 [core]
-  editor = vim
+  editor = nvim
 [color]
   diff = auto
   status = auto
   branch = auto
-[format]
-  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [alias]
   i = init
   c = commit -m
@@ -18,12 +18,3 @@
   pl = pull
   ps = push
   br = branch
-  lg = "!source ~/.githelpers && pretty_git_log"
-  l = !git lg -30
-  la = !git lg --all
-  ll = log --stat --abbrev-commit
-  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-[github]
-  user = AlessioRocco
-[hub]
-  protocol = https

@@ -17,3 +17,6 @@ cdpath=($HOME $HOME/Code)
 if [[ -a /etc/zshenv ]]; then
   sudo mv /etc/zshenv /etc/zprofile
 fi
+
+export PATH="$HOME/.bin:$PATH"
+eval "$(rbenv init - --no-rehash zsh)"

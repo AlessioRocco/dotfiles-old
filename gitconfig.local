@@ -15,6 +15,13 @@
   a = add
   s = status
   d = diff --color-words
+  r = rebase
+  rc = rebase --continue
+  rs = rebase --skip
+  h = stash
+  hl = stash list
+  ha = stash apply
+  hp = stash pop
   pl = pull
   ps = push
   br = branch

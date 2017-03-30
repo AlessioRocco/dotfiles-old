@@ -11,5 +11,5 @@ autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
 autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
 
 " Add pry to debug
-nnoremap <Leader>bp obinding.pry<esc>:w<cr>
-nnoremap <Leader>bP Obinding.pry<esc>:w<cr>
+nnoremap <leader>bp obinding.pry<esc>:w<cr>
+nnoremap <leader>bP Obinding.pry<esc>:w<cr>

@@ -79,8 +79,8 @@ map <leader>\| :vsplit<cr>
 map <leader>- :split<cr>
 
 " Intelligent windows resizing using ctrl + arrow keys
-nnoremap <silent> <C-Right> :call utils#intelligentVerticalResize('right')<cr>
-nnoremap <silent> <C-Left> :call utils#intelligentVerticalResize('left')<cr>
-nnoremap <silent> <C-Up> :resize +1<cr>
-nnoremap <silent> <C-Down> :resize -1<cr>
+nnoremap <silent> <A-Right> :call utils#intelligentVerticalResize('right')<cr>
+nnoremap <silent> <A-Left> :call utils#intelligentVerticalResize('left')<cr>
+nnoremap <silent> <A-Up> :resize +1<cr>
+nnoremap <silent> <A-Down> :resize -1<cr>
 " }}}

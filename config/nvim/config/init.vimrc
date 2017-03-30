@@ -29,27 +29,11 @@ Plug 'tpope/vim-unimpaired'
 " }}}
 
 " ------------------------------------------------------------------------------
-" Unite fuzzy searcher {{{
-" ------------------------------------------------------------------------------
-
-" Unite files, buffers, etc. sources
-Plug 'Shougo/unite.vim'
-" Outline source
-Plug 'Shougo/unite-outline'
-" History/yank source
-Plug 'Shougo/neoyank.vim'
-" MRU source
-Plug 'Shougo/neomru.vim'
-" Tag source
-Plug 'tsukkee/unite-tag'
-" Ag wrapper (Unite grep alternative) search and edit
-Plug 'dyng/ctrlsf.vim'
-"}}}
-
-" ------------------------------------------------------------------------------
 " File managers/explorers {{{
 " ------------------------------------------------------------------------------
 
+" Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder.
+Plug 'ctrlpvim/ctrlp.vim'
 " Automatically create any non-existent directories before writing the buffer
 Plug 'pbrisbin/vim-mkdir'
 " Rename the current file in the vim buffer + retain relative path
@@ -58,6 +42,8 @@ Plug 'danro/rename.vim'
 Plug 'rking/ag.vim'
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
+" Ag wrapper (Unite grep alternative) search and edit
+Plug 'dyng/ctrlsf.vim'
 " }}}
 
 " -----------------------------------------------------------------------------
@@ -84,15 +70,11 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " deoplete.nvim source for javascript
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
-" Perform all your vim insert mode completions with Tab
-Plug 'ervandew/supertab'
 " Automatically closing pair stuff
 Plug 'cohama/lexima.vim'
 " Snippet support (C-j)
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" CamelCase and snake_case motions
-Plug 'bkad/CamelCaseMotion'
 " }}}
 
 " ------------------------------------------------------------------------------
@@ -105,6 +87,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'justinmk/vim-sneak'
 " Extended f, F, t and T key mappings for Vim
 Plug 'rhysd/clever-f.vim'
+" CamelCase and snake_case motions
+Plug 'bkad/CamelCaseMotion'
 "}}}
 
 " ------------------------------------------------------------------------------
@@ -201,10 +185,8 @@ source $HOME/.config/nvim/config/plugins/editorconfig.vimrc
 source $HOME/.config/nvim/config/plugins/fugitive.vimrc
 source $HOME/.config/nvim/config/plugins/nerdtree.vimrc
 source $HOME/.config/nvim/config/plugins/sneak.vimrc
-source $HOME/.config/nvim/config/plugins/supertab.vimrc
 source $HOME/.config/nvim/config/plugins/tern_for_vim.vimrc
 source $HOME/.config/nvim/config/plugins/ultisnips.vimrc
-source $HOME/.config/nvim/config/plugins/unite.vimrc
 source $HOME/.config/nvim/config/plugins/vimux.vimrc
 source $HOME/.config/nvim/config/plugins/vroom.vimrc
 source $HOME/.config/nvim/config/plugins/camelcasemotion.vimrc

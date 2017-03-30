@@ -1,14 +1,14 @@
 # Adds the Code folder (with project) in the cd path
-set -x CDPATH . ~/Code
+set -xg CDPATH . ~/Code
 
 # Make nvim the default editor
-set -x EDITOR "nvim"
+set -xg EDITOR "atom"
 
 # Editor for opening gems
-set -x BUNDLER_EDITOR "nvim"
+set -xg BUNDLER_EDITOR "atom"
 
 # Pulsar configuration repo
-set -x PULSAR_CONF_REPO "nebulab/pulsar-conf"
+set -xg PULSAR_CONF_REPO "nebulab/pulsar-conf"
 
 # Hub
 eval (hub alias -s)
@@ -20,34 +20,37 @@ balias bi "bundle install"
 balias bo "bundle open"
 
 # Console aliases
-balias eh="sudo nvim /etc/hosts"
-balias reload="exec $SHELL"
+balias eh "sudo nvim /etc/hosts"
+balias reload "exec $SHELL"
 
 # Git
 balias g "git"
 balias gs "g status"
-balias gb "git browse"
+balias gb "g browse"
+balias grc "g rebase --continue"
+balias grs "g rebase --skip"
 
-balias pryr="pry -r ./config/environment.rb"
-balias ms="brew services start mongodb"
-balias redis="brew services start redis"
-balias pgs="brew services start postgresql"
+balias pryr "pry -r ./config/environment.rb"
+balias ms "brew services start mongodb"
+balias redis "brew services start redis"
+balias pgs "brew services start postgresql"
 
 # Invoker
-balias iks="invoker start invoker.ini"
-balias ikp="invoker stop"
-balias ikl="invoker list"
-balias ikt="invoker tail"
-balias iksd="invoker start invoker.ini -d"
+balias iks "invoker start invoker.ini"
+balias ikp "invoker stop"
+balias ikl "invoker list"
+balias ikt "invoker tail"
+balias iksd "invoker start invoker.ini -d"
+
+# Ruby/Rails
+balias s fish_rspec
+balias r fish_rails
 
 # Pair
-alias txpair="tmux new -s pair"
-alias txnew="tmux new -s"
-alias txatt="tmux attach -t"
-alias txls="tmux list-sessions"
+balias txpair "tmux new -s pair"
+balias txnew "tmux new -s"
+balias txatt "tmux attach -t"
+balias txls "tmux list-sessions"
 
 # Set bin Path
 set PATH ~/.bin ./bin $PATH
-
-# Set shopify theme kit
-set PATH ~/.themekit $PATH

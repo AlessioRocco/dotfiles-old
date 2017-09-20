@@ -8,3 +8,6 @@ set -gx OMF_PATH /Users/alessio/.local/share/omf
 source $OMF_PATH/init.fish
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+if test $TERM_PROGRAM = iTerm.app
+  test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+end

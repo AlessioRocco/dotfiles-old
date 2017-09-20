@@ -1,18 +1,19 @@
 #!/bin/sh
 
-brew tap neovim/homebrew-neovim
-brew_install_or_upgrade --HEAD neovim
+# Install basic apps
+brew cask install atom
+brew cask install iterm
+brew cask install google-chrome
+brew cask install firefox
+brew cask install slack
+brew cask install 1password
+brew cask install clipy
+brew cask install spectacle
+brew cask install franz
+brew cask install skype
 
-brew cask install synology-assistant
-brew cask install synology-cloud-station
-brew cask install synology-photo-station-uploader
-brew cask install virtualbox
-brew cask install teamviewer
-brew cask install transmit
-brew cask install kindle
-brew cask install cleanmymac
-brew cask install clipmenu
-brew cask install fluid
+# Install rbenv-default-gems
+git clone https://github.com/sstephenson/rbenv-default-gems.git ~/.rbenv/plugins/rbenv-default-gems
 
 fancy_echo "Changing your shell to fish ..."
   chsh -s $(which fish)

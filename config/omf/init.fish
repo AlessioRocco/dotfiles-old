@@ -1,7 +1,7 @@
 # Adds the Code folder (with project) in the cd path
 set -xg CDPATH . ~/Code
 
-# Make nvim the default editor
+# Make atom the default editor
 set -xg EDITOR "atom"
 
 # Editor for opening gems

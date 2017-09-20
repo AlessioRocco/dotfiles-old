@@ -3,12 +3,22 @@
   email = alessio.rocco.lt@gmail.com
 [github]
   user = AlessioRocco
+[hub]
+  protocol = https
+[credential]
+  helper = osxkeychain
 [core]
-  editor = nvim
+  editor = vim
 [color]
   diff = auto
   status = auto
   branch = auto
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+[push]
+  default = current
+[pull]
+  rebase = true
 [alias]
   i = init
   c = commit -m
@@ -25,3 +35,13 @@
   pl = pull
   ps = push
   br = branch
+  lg = "!source ~/.bin/git-log && pretty_git_log"
+  l = !git lg -30
+  la = !git lg --all
+  ll = log --stat --abbrev-commit
+  rbr = "!source ~/.bin/git-rename-branch"
+  up = "!source ~/.bin/git-up"
+  cbr = "!source ~/.bin/git-create-branch"
+  copr = "!source ~/.bin/git-co-pr"
+  rh = reset HEAD
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort

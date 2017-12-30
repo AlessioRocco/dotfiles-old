@@ -90,3 +90,8 @@ case "$SHELL" in
     update_shell
     ;;
 esac
+
+if [ ! -d "$HOME/.local/share/omf" ]; then
+  fancy_echo "Install oh-my-fish"
+  curl -L https://get.oh-my.fish | fish
+fi

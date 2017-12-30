@@ -68,6 +68,9 @@ brew "vim"
 
 # GitHub
 brew "hub"
+
+# Image manipulation
+brew "imagemagick"
 cask "atom"
 EOF
 

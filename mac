@@ -64,6 +64,7 @@ brew "git"
 brew "openssl"
 brew "reattach-to-user-namespace"
 brew "tmux"
+brew "vim"
 
 cask "atom"
 EOF

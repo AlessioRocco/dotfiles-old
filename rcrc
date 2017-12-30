@@ -1,2 +1,2 @@
-DOTFILES_DIRS="~/.dotfiles"
-EXCLUDES="README*.md LICENSE mac"
+DOTFILES_DIRS="$HOME/dotfiles"
+EXCLUDES="README*.md LICENSE mac assets"

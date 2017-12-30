@@ -215,3 +215,11 @@ if [ ! -d "$DOTFILES_DIR" ]; then
 fi
 rcup -d "$DOTFILES_DIR" rcrc
 rcup
+
+fancy_echo "Configuring iTerm2..."
+# Copy Monaco for Powerline Font
+cp "$DOTFILES_DIR/assets/fonts/Monaco+for+Powerline.otf" "$HOME/Library/Fonts/"
+# Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

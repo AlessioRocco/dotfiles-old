@@ -1,8 +1,8 @@
 # Adds the Code folder (with project) in the cd path
 set -xg CDPATH . ~/Code
 
-# Make atom the default editor
-set -xg EDITOR "atom"
+# Make nvim the default editor
+set -xg EDITOR "nvim"
 
 # Editor for opening gems
 set -xg BUNDLER_EDITOR "atom"
@@ -25,7 +25,7 @@ balias s fish_rspec
 balias r fish_rails
 
 # Utility aliases
-balias eh "sudo atom /etc/hosts"
+balias eh "sudo nvim /etc/hosts"
 balias reload "exec $SHELL"
 
 # Set bin Path

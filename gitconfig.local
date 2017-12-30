@@ -20,6 +20,8 @@
 [pull]
   rebase = true
 [alias]
+  prev = checkout HEAD^
+  next = !git checkout `git rev-list HEAD..end | tail -1`
   i = init
   c = commit -m
   a = add

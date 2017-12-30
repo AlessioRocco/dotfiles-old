@@ -125,6 +125,14 @@ brew "redis", restart_service: :changed
 
 # Apps
 cask "atom"
+cask "iterm2"
+cask "spectacle"
+cask "cleanmymac"
+cask "slack"
+cask "skype"
+cask "franz"
+cask "google-chrome"
+cask "firefox"
 EOF
 
 case "$SHELL" in

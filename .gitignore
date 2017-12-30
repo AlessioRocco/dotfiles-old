@@ -1,0 +1,5 @@
+!bin
+vim/bundle/
+tmux-powerlinerc
+config/fish/fish_history
+config/fish/fishd.*

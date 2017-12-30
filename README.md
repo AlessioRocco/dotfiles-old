@@ -21,13 +21,13 @@ less mac
 Execute the downloaded script:
 
 ```sh
-sh mac 2>&1 | tee ~/laptop.log
+sh setup 2>&1 | tee ~/setup.log
 ```
 
 Optionally, review the log:
 
 ```sh
-less ~/laptop.log
+less ~/setup.log
 ```
 
 License

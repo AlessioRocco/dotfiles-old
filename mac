@@ -62,6 +62,7 @@ tap "homebrew/services"
 brew "fish"
 brew "git"
 brew "openssl"
+brew "reattach-to-user-namespace"
 
 cask "atom"
 EOF

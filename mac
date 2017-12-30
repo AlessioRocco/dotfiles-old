@@ -63,6 +63,7 @@ brew "fish"
 brew "git"
 brew "openssl"
 brew "reattach-to-user-namespace"
+brew "tmux"
 
 cask "atom"
 EOF

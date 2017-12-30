@@ -213,7 +213,7 @@ fancy_echo "Installing dotfiles..."
 if [ ! -d "$DOTFILES_DIR" ]; then
   git clone https://github.com/AlessioRocco/dotfiles "$DOTFILES_DIR"
 fi
-rcup -d "$DOTFILES_DIR" rcrc
+rcup -K -d "$DOTFILES_DIR" rcrc
 rcup
 
 fancy_echo "Configuring iTerm2..."

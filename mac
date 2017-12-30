@@ -71,6 +71,9 @@ brew "hub"
 
 # Image manipulation
 brew "imagemagick"
+
+# Databases
+brew "postgres", restart_service: :changed
 cask "atom"
 EOF
 

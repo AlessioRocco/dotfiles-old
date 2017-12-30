@@ -75,6 +75,8 @@ brew "imagemagick"
 # Databases
 brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
+
+# Apps
 cask "atom"
 EOF
 

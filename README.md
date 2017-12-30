@@ -9,7 +9,7 @@ Install
 Download the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/AlessioRocco/dotfiles/master/mac
+curl --remote-name https://raw.githubusercontent.com/AlessioRocco/dotfiles/master/bin/setup
 ```
 
 Review the script (avoid running scripts you haven't read!):

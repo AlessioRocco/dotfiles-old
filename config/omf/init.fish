@@ -13,6 +13,9 @@ set -xg PULSAR_CONF_REPO "nebulab/pulsar-conf"
 # Git/Hub
 eval (hub alias -s)
 
+# asdf version manager
+source ~/.asdf/asdf.fish
+
 ### Abbreviations
 
 # Bundler

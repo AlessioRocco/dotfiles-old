@@ -1,0 +1,21 @@
+#!/usr/local/bin/fish
+
+# Install vim Plug and Plugins
+if [ -e "$HOME"/.vim/autoload/plug.vim ]
+  vim -E -s +PlugUpgrade +qa
+else
+  curl -fLo "$HOME"/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+end
+vim -u "$HOME"/.vimrc +PlugUpdate +PlugClean! +qa
+
+# Install/Clean Tmux Plugin Manager Plugins
+~/.tmux/plugins/tpm/bin/update_plugins all
+~/.tmux/plugins/tpm/bin/clean_plugins
+
+# Install/Clean oh-my-fish Plugins
+omf update
+omf install
+omf reload
+
+reset -Q

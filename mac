@@ -48,6 +48,25 @@ install_asdf_plugin() {
   fi
 }
 
+install_asdf_language() {
+  local language="$1"
+  local version
+  version="$(asdf list-all "$language" | tail -1)"
+
+  if ! asdf list "$language" | grep -Fq "$version"; then
+    asdf install "$language" "$version"
+    asdf global "$language" "$version"
+  fi
+}
+
+gem_install_or_update() {
+  if gem list "$1" --installed > /dev/null; then
+    gem update "$@"
+  else
+    gem install "$@"
+  fi
+}
+
 # shellcheck disable=SC2154
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
@@ -131,3 +150,13 @@ if [ ! -d "$HOME/.asdf" ]; then
   mkdir -p "$HOME/.config/fish/completions"
   cp "$HOME/.asdf/completions/asdf.fish" "$HOME/.config/fish/completions"
 fi
+
+source "$HOME/.asdf/asdf.sh"
+install_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
+
+fancy_echo "Installing latest Ruby..."
+install_asdf_language "ruby"
+gem update --system
+gem_install_or_update "bundler"
+number_of_cores=$(sysctl -n hw.ncpu)
+bundle config --global jobs $((number_of_cores - 1))

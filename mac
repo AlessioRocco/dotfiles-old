@@ -58,8 +58,10 @@ brew bundle --file=- <<EOF
 tap "caskroom/cask"
 tap "homebrew/services"
 
+# Unix
 brew "fish"
 brew "git"
+brew "openssl"
 
 cask "atom"
 EOF

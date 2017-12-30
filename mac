@@ -39,6 +39,21 @@ append_to_init_fish() {
   fi
 }
 
+append_to_tmux_conf() {
+  local text="$1" tmux_conf
+  local skip_new_line="${2:-0}"
+
+  tmux_conf="$HOME/.tmux.conf"
+
+  if ! grep -Fqs "$text" "$tmux_conf"; then
+    if [ "$skip_new_line" -eq 1 ]; then
+      printf "%s\n" "$text" >> "$tmux_conf"
+    else
+      printf "\n%s\n" "$text" >> "$tmux_conf"
+    fi
+  fi
+}
+
 install_asdf_plugin() {
   local name="$1"
   local url="$2"
@@ -179,3 +194,15 @@ bundle config --global jobs $((number_of_cores - 1))
 fancy_echo "Installing latest Node..."
 bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
 install_asdf_language "nodejs"
+
+fancy_echo "Installing Tmux Plugin Manager..."
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+fi
+
+if [ ! -f "$HOME/.tmux.conf" ]; then
+  append_to_tmux_conf "# List of plugins" 1
+  append_to_tmux_conf "set -g @plugin 'tmux-plugins/tpm'" 1
+  append_to_tmux_conf "# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)"
+  append_to_tmux_conf "run '~/.tmux/plugins/tpm/tpm'" 1
+fi

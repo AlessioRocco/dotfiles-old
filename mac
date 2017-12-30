@@ -66,6 +66,8 @@ brew "reattach-to-user-namespace"
 brew "tmux"
 brew "vim"
 
+# GitHub
+brew "hub"
 cask "atom"
 EOF
 

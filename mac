@@ -24,6 +24,21 @@ update_shell() {
   sudo chsh -s "$shell_path" "$USER"
 }
 
+append_to_init_fish() {
+  local text="$1" init_fish
+  local skip_new_line="${2:-0}"
+
+  init_fish="$HOME/.config/omf/init.fish"
+
+  if ! grep -Fqs "$text" "$init_fish"; then
+    if [ "$skip_new_line" -eq 1 ]; then
+      printf "%s\n" "$text" >> "$init_fish"
+    else
+      printf "\n%s\n" "$text" >> "$init_fish"
+    fi
+  fi
+}
+
 # shellcheck disable=SC2154
 trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
 
@@ -94,4 +109,8 @@ esac
 if [ ! -d "$HOME/.local/share/omf" ]; then
   fancy_echo "Install oh-my-fish"
   curl -L https://get.oh-my.fish | fish
+fi
+
+if [ ! -f "$HOME/.config/omf/init.fish" ]; then
+  touch "$HOME/.config/omf/init.fish"
 fi

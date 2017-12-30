@@ -115,6 +115,10 @@ brew "hub"
 # Image manipulation
 brew "imagemagick"
 
+# Programming language prerequisites and package managers
+brew "coreutils"
+brew "gpg"
+
 # Databases
 brew "postgres", restart_service: :changed
 brew "redis", restart_service: :changed
@@ -153,6 +157,7 @@ fi
 
 source "$HOME/.asdf/asdf.sh"
 install_asdf_plugin "ruby" "https://github.com/asdf-vm/asdf-ruby.git"
+install_asdf_plugin "nodejs" "https://github.com/asdf-vm/asdf-nodejs.git"
 
 fancy_echo "Installing latest Ruby..."
 install_asdf_language "ruby"
@@ -160,3 +165,7 @@ gem update --system
 gem_install_or_update "bundler"
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
+
+fancy_echo "Installing latest Node..."
+bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
+install_asdf_language "nodejs"

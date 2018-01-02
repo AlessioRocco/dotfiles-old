@@ -131,7 +131,8 @@ brew "the_silver_searcher"
 brew "hub"
 
 # Image manipulation
-brew "imagemagick"
+brew "pkg-config"
+brew "imagemagick@6"
 
 # Programming language prerequisites and package managers
 brew "coreutils"
@@ -152,6 +153,8 @@ cask "franz"
 cask "google-chrome"
 cask "firefox"
 EOF
+
+brew link imagemagick@6 --force
 
 case "$SHELL" in
   */fish)

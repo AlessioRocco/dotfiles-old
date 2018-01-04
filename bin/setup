@@ -126,6 +126,7 @@ brew "rcm"
 brew "reattach-to-user-namespace"
 brew "tmux"
 brew "vim"
+brew "neovim"
 brew "the_silver_searcher"
 
 # GitHub
